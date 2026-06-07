@@ -172,6 +172,154 @@
   .week-nav-btn:disabled{opacity:.3;cursor:not-allowed;}
   .week-nav-btn:disabled:hover{background:#fff;color:var(--primary);}
 
+
+
+  /* ══════ MONETARY REWARDS ══════ */
+  #money-panel{padding:10px 16px 12px;border-bottom:1px solid #334155;background:linear-gradient(135deg,#052e16,#064e3b);}
+  #money-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+  #money-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4ade80;}
+  #money-balance{font-size:20px;font-weight:900;color:#4ade80;font-family:'Courier New',monospace;}
+  #money-sub{font-size:10px;color:#166534;margin-top:2px;}
+  #money-ledger-link{display:flex;align-items:center;gap:8px;padding:7px 16px;font-size:12px;color:#94a3b8;cursor:pointer;border-bottom:1px solid #334155;transition:background .15s;}
+  #money-ledger-link:hover{background:#052e16;color:#4ade80;}
+
+  /* Dashboard money card */
+  .dash-money{background:linear-gradient(135deg,#052e16,#064e3b);border-radius:10px;padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;}
+  .dash-money-left .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#4ade80;font-weight:700;}
+  .dash-money-left .val{font-size:32px;font-weight:900;color:#4ade80;font-family:'Courier New',monospace;margin-top:2px;}
+  .dash-money-left .sub{font-size:11px;color:#166534;margin-top:2px;}
+  .dash-money-right{text-align:right;}
+  .dash-money-right .badge-amt{font-size:13px;font-weight:700;color:#bbf7d0;}
+  .dash-money-right .badge-sub{font-size:10px;color:#166534;margin-top:3px;}
+
+  /* Ledger modal */
+  #ledger-modal .modal-box{background:#0a1628;border-color:#334155;max-width:560px;}
+  #ledger-modal h2{color:#4ade80;}
+  .ledger-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;}
+  .ledger-table th{background:#052e16;color:#4ade80;padding:8px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;}
+  .ledger-table td{padding:9px 12px;border-bottom:1px solid #1e293b;color:#e2e8f0;vertical-align:middle;}
+  .ledger-table tr:last-child td{border-bottom:none;}
+  .ledger-table .amt{color:#4ade80;font-weight:700;font-family:'Courier New',monospace;}
+  .ledger-table .bal{color:#86efac;font-family:'Courier New',monospace;}
+  .ledger-total{display:flex;justify-content:space-between;align-items:center;background:#052e16;padding:12px 16px;border-radius:0 0 10px 10px;margin-top:12px;font-weight:800;}
+  .ledger-total .total-lbl{color:#4ade80;font-size:14px;}
+  .ledger-total .total-val{color:#4ade80;font-size:24px;font-family:'Courier New',monospace;}
+  .deposit-notif{position:fixed;top:120px;right:24px;background:#052e16;border:1.5px solid #4ade80;color:#4ade80;font-size:16px;font-weight:800;padding:10px 20px;border-radius:30px;box-shadow:0 4px 20px rgba(74,222,128,.3);transform:translateY(-20px);opacity:0;transition:all .4s;z-index:9999;pointer-events:none;font-family:'Courier New',monospace;}
+  .deposit-notif.show{opacity:1;transform:translateY(0);}
+  .ledger-print-btn{background:#4ade80;color:#052e16;border:none;border-radius:6px;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;margin-left:8px;}
+  .ledger-print-btn:hover{background:#22c55e;}
+
+  /* ══════════════ GAMIFICATION ══════════════ */
+  /* Sidebar rank panel */
+  #gp-panel{padding:12px 16px;border-bottom:1px solid #334155;background:linear-gradient(135deg,#1e3a5f,#1a2744);}
+  #gp-rank-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+  #gp-rank-text{font-size:14px;font-weight:800;color:#fbbf24;letter-spacing:.02em;}
+  #gp-xp-num{font-size:11px;color:#94a3b8;font-weight:600;}
+  #gp-xp-track{background:#334155;border-radius:20px;height:8px;margin-bottom:5px;overflow:hidden;}
+  #gp-xp-fill{height:8px;border-radius:20px;background:linear-gradient(90deg,#fbbf24,#f59e0b);transition:width .5s ease;width:0%;}
+  #gp-xp-label{font-size:10px;color:#64748b;text-align:right;}
+  #gp-stats-row{display:flex;gap:6px;margin-top:8px;}
+  .gp-stat{flex:1;background:#1e293b;border-radius:6px;padding:5px 8px;text-align:center;}
+  .gp-stat-val{font-size:15px;font-weight:800;color:#93c5fd;}
+  .gp-stat-lbl{font-size:9px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;}
+  /* Badges link */
+  #gp-badges-link{display:flex;align-items:center;gap:8px;padding:7px 16px;font-size:12px;color:#94a3b8;cursor:pointer;transition:background .15s;}
+  #gp-badges-link:hover{background:#1e3a5f;color:#fbbf24;}
+  #gp-badge-count{background:#fbbf24;color:#0f172a;border-radius:10px;padding:1px 7px;font-size:11px;font-weight:700;}
+
+  /* Complete button on topic cards */
+  .complete-btn{margin-left:auto;margin-right:8px;padding:4px 12px;border-radius:20px;border:1.5px solid #2563eb;background:#fff;color:#2563eb;font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;z-index:2;}
+  .complete-btn:hover{background:#2563eb;color:#fff;}
+  .complete-btn.done{background:#16a34a;border-color:#16a34a;color:#fff;}
+  .topic-card.topic-done .topic-header{background:linear-gradient(135deg,#f0fdf4,#dcfce7)!important;}
+  .topic-card.topic-done .topic-num{background:#dcfce7;color:#15803d;}
+
+  /* Week progress badge on nav */
+  .nav-week-prog{margin-left:auto;font-size:10px;color:#64748b;font-weight:600;}
+  .nav-week-prog.done{color:#4ade80;}
+
+  /* XP floating notification */
+  #xp-notif{position:fixed;top:80px;right:24px;background:#0f172a;color:#fbbf24;font-size:15px;font-weight:800;padding:10px 20px;border-radius:30px;box-shadow:0 4px 20px rgba(251,191,36,.4);transform:translateY(-20px);opacity:0;transition:all .4s;z-index:9999;pointer-events:none;}
+  #xp-notif.show{opacity:1;transform:translateY(0);}
+
+  /* Achievement toast */
+  #achievement-toast{position:fixed;bottom:32px;right:24px;background:#0f172a;border:1px solid #fbbf24;border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 32px rgba(0,0,0,.4);transform:translateX(120%);transition:transform .4s cubic-bezier(.34,1.56,.64,1);z-index:9999;max-width:300px;}
+  #achievement-toast.show{transform:translateX(0);}
+  #ach-icon{font-size:28px;flex-shrink:0;}
+  #ach-label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#fbbf24;font-weight:700;}
+  #ach-name{font-size:14px;font-weight:800;color:#f1f5f9;margin-top:2px;}
+  #ach-desc{font-size:11px;color:#94a3b8;margin-top:2px;}
+
+  /* Confetti canvas */
+  #confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;}
+
+  /* Home dashboard */
+  #gam-dashboard{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);border-radius:14px;padding:24px 28px;margin-bottom:24px;color:#fff;}
+  #gam-dashboard h3{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#fbbf24;margin-bottom:12px;font-weight:700;}
+  #dash-rank-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  #dash-rank-icon{font-size:40px;line-height:1;}
+  #dash-rank-name{font-size:22px;font-weight:900;color:#fbbf24;}
+  #dash-rank-sub{font-size:12px;color:#94a3b8;margin-top:2px;}
+  #dash-xp-track{background:rgba(255,255,255,.1);border-radius:20px;height:10px;margin-bottom:6px;overflow:hidden;}
+  #dash-xp-fill{height:10px;border-radius:20px;background:linear-gradient(90deg,#fbbf24,#f97316);transition:width .6s ease;width:0%;}
+  #dash-xp-text{font-size:12px;color:#94a3b8;text-align:right;}
+  #dash-stats{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
+  .dash-stat{background:rgba(255,255,255,.07);border-radius:10px;padding:10px 16px;flex:1;min-width:80px;text-align:center;}
+  .dash-stat-val{font-size:22px;font-weight:900;color:#93c5fd;}
+  .dash-stat-lbl{font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+  #dash-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
+  .dash-btn{padding:8px 18px;border-radius:8px;border:none;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;}
+  .dash-btn-gold{background:#fbbf24;color:#0f172a;}
+  .dash-btn-gold:hover{background:#f59e0b;}
+  .dash-btn-outline{background:transparent;border:1.5px solid #334155;color:#94a3b8;}
+  .dash-btn-outline:hover{border-color:#fbbf24;color:#fbbf24;}
+
+  /* Week progress in overview table */
+  .week-prog-bar{background:#e2e8f0;border-radius:10px;height:5px;margin-top:5px;}
+  .week-prog-fill{height:5px;border-radius:10px;background:linear-gradient(90deg,#2563eb,#7c3aed);transition:width .4s;}
+  .week-prog-text{font-size:10px;color:#94a3b8;margin-top:3px;}
+
+  /* Badges modal */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:10000;align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.open{display:flex;}
+  .modal-box{background:#0f172a;border:1px solid #334155;border-radius:16px;padding:28px;max-width:700px;width:100%;max-height:85vh;overflow-y:auto;}
+  .modal-box h2{font-size:20px;font-weight:800;color:#fbbf24;margin-bottom:6px;}
+  .modal-box .modal-sub{font-size:13px;color:#64748b;margin-bottom:20px;}
+  .modal-close{float:right;background:none;border:1px solid #334155;color:#94a3b8;border-radius:6px;padding:4px 12px;cursor:pointer;font-size:12px;margin-top:-4px;}
+  .modal-close:hover{border-color:#fbbf24;color:#fbbf24;}
+  .badges-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;margin-top:4px;}
+  .badge-card{background:#1e293b;border-radius:10px;padding:14px 12px;text-align:center;border:1.5px solid #334155;transition:all .2s;}
+  .badge-card.earned{border-color:#fbbf24;background:linear-gradient(135deg,#1e293b,#1e3a5f);}
+  .badge-card.locked{opacity:.4;filter:grayscale(1);}
+  .badge-icon{font-size:28px;margin-bottom:6px;}
+  .badge-name{font-size:11px;font-weight:700;color:#f1f5f9;margin-bottom:3px;}
+  .badge-desc{font-size:10px;color:#64748b;line-height:1.4;}
+
+  /* Fun facts section */
+  .fun-facts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+  .fun-fact-card{background:#1e293b;border-radius:12px;padding:20px;border-left:4px solid #334155;transition:all .3s;}
+  .fun-fact-card.unlocked{border-left-color:#fbbf24;}
+  .fun-fact-card.locked-card{filter:blur(3px);opacity:.4;pointer-events:none;}
+  .ff-week{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fbbf24;margin-bottom:6px;}
+  .ff-title{font-size:14px;font-weight:800;color:#f1f5f9;margin-bottom:8px;}
+  .ff-body{font-size:12.5px;color:#94a3b8;line-height:1.7;}
+  .ff-locked-msg{font-size:12px;color:#475569;text-align:center;padding:12px 0;}
+
+  /* Certificate modal */
+  .cert-box{background:#fff;color:#0f172a;text-align:center;padding:40px;max-width:600px;}
+  .cert-title{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#7c3aed;margin-bottom:8px;}
+  .cert-name{font-size:36px;font-weight:900;color:#0f172a;margin-bottom:8px;}
+  .cert-sub{font-size:15px;color:#334155;margin-bottom:20px;line-height:1.6;}
+  .cert-seal{font-size:60px;margin:16px 0;}
+  .cert-date{font-size:12px;color:#64748b;margin-top:16px;}
+  .cert-btn{background:#7c3aed;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:13px;font-weight:700;cursor:pointer;margin-top:16px;}
+  .cert-btn:hover{background:#6d28d9;}
+
+  /* Streak indicator */
+  #streak-badge{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);background:#0f172a;border:2px solid #fbbf24;border-radius:20px;padding:20px 32px;text-align:center;z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+  #streak-badge.show{display:block;transform:translate(-50%,-50%) scale(1);}
+  #streak-badge.hide{transform:translate(-50%,-50%) scale(0);}
+
   #home{display:block;}
   @media(max-width:768px){body{flex-direction:column;}#sidebar{width:100%;height:auto;position:relative;}.objectives ul{grid-template-columns:1fr;}}
 </style>
@@ -184,6 +332,32 @@
     <h1>9th Grade Math</h1>
     <p>8-Week Algebra I Curriculum</p>
     <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+  </div>
+  <div id="gp-panel">
+    <div id="gp-rank-row">
+      <div id="gp-rank-text">🚀 Cadet</div>
+      <div id="gp-xp-num">0 XP</div>
+    </div>
+    <div id="gp-xp-track"><div id="gp-xp-fill" style="width:0%"></div></div>
+    <div id="gp-xp-label">0 / 150 XP to Astronaut</div>
+    <div id="gp-stats-row">
+      <div class="gp-stat"><div class="gp-stat-val" id="gp-topics-done">0</div><div class="gp-stat-lbl">Topics</div></div>
+      <div class="gp-stat"><div class="gp-stat-val" id="gp-weeks-done">0</div><div class="gp-stat-lbl">Weeks</div></div>
+      <div class="gp-stat"><div class="gp-stat-val" id="gp-badges-done">0</div><div class="gp-stat-lbl">Badges</div></div>
+    </div>
+  </div>
+  <div id="money-panel">
+    <div id="money-header">
+      <div id="money-label">💰 Reward Balance</div>
+    </div>
+    <div id="money-balance">$0</div>
+    <div id="money-sub">$100 deposited per topic completed</div>
+  </div>
+  <div id="money-ledger-link" onclick="openLedger()">
+    📒 View Reward Ledger
+  </div>
+  <div id="gp-badges-link" onclick="openBadges()">
+    🏅 Mission Patches &nbsp;<span id="gp-badge-count">0</span>
   </div>
   <nav>
     <div class="nav-week"><button class="nav-week-btn" onclick="showHome()"><span class="wnum">⌂</span> Overview</button></div>
@@ -208,6 +382,7 @@
     <a href="#" onclick="showAppendix('glossary');return false;">📖 Glossary</a>
     <a href="#" onclick="showAppendix('formulas');return false;">📐 Formula Sheet</a>
     <a href="#" onclick="showAppendix('pacing');return false;">📅 Pacing Guide</a>
+    <a href="#" onclick="showFunFacts();return false;">🌌 Mission Logs</a>
   </div>
 </div>
 
@@ -221,17 +396,53 @@
     <p>A complete 8-week curriculum with plain-English explanations, worked examples, and practice worksheets. Every concept explained the way a student — not a textbook — would understand it.</p>
     <div class="hero-meta"><span>8 Weeks</span><span>5 Days/Week</span><span>~50 Min/Class</span><span>32 Topics</span></div>
   </div>
-  <table class="overview-table">
+  
+<div id="gam-dashboard">
+  <h3>🛸 Mission Control</h3>
+  <div id="dash-rank-row">
+    <div id="dash-rank-icon">🚀</div>
+    <div>
+      <div id="dash-rank-name">Cadet</div>
+      <div id="dash-rank-sub">Complete topics to earn XP and rank up</div>
+    </div>
+  </div>
+  <div id="dash-xp-track"><div id="dash-xp-fill" style="width:0%"></div></div>
+  <div id="dash-xp-text">0 / 150 XP to next rank</div>
+  <div id="dash-stats">
+    <div class="dash-stat"><div class="dash-stat-val" id="dash-total-xp">0</div><div class="dash-stat-lbl">Total XP</div></div>
+    <div class="dash-stat"><div class="dash-stat-val" id="dash-topics">0/28</div><div class="dash-stat-lbl">Topics Done</div></div>
+    <div class="dash-stat"><div class="dash-stat-val" id="dash-weeks">0/8</div><div class="dash-stat-lbl">Weeks Done</div></div>
+    <div class="dash-stat"><div class="dash-stat-val" id="dash-badges-ct">0</div><div class="dash-stat-lbl">Badges</div></div>
+  </div>
+  <div class="dash-money" id="dash-money-card" style="margin-top:16px;">
+    <div class="dash-money-left">
+      <div class="lbl">💰 Reward Balance</div>
+      <div class="val" id="dash-money-val">$0</div>
+      <div class="sub" id="dash-money-sub">0 topics × $100 = $0</div>
+    </div>
+    <div class="dash-money-right">
+      <div class="badge-amt">$100 / topic</div>
+      <div class="badge-sub">$50 bonus / week complete</div>
+      <div style="margin-top:8px;"><button class="dash-btn" style="background:#4ade80;color:#052e16;font-size:11px;padding:6px 14px;" onclick="openLedger()">📒 Ledger</button></div>
+    </div>
+  </div>
+  <div id="dash-actions">
+    <button class="dash-btn dash-btn-gold" onclick="openBadges()">🏅 My Badges</button>
+    <button class="dash-btn dash-btn-outline" onclick="showFunFacts()">🌌 Mission Logs</button>
+    <button class="dash-btn dash-btn-outline" id="cert-btn" onclick="openCertificate()" style="display:none">🎓 Certificate</button>
+  </div>
+</div>
+<table class="overview-table">
     <thead><tr><th>Week</th><th>Theme</th><th>Key Topics</th></tr></thead>
     <tbody>
-      <tr><td><span class="wk-badge" onclick="showWeek(1)">1</span></td><td><strong>Number Systems &amp; Real Numbers</strong></td><td>Real numbers, properties, order of operations, absolute value</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(2)">2</span></td><td><strong>Linear Equations &amp; Inequalities</strong></td><td>One/multi-step equations, literal equations, inequalities</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(3)">3</span></td><td><strong>Functions &amp; Relations</strong></td><td>Domain/range, function notation, evaluation</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(4)">4</span></td><td><strong>Graphing Linear Functions</strong></td><td>Slope, slope-intercept, point-slope, standard form</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(5)">5</span></td><td><strong>Systems of Equations</strong></td><td>Graphing, substitution, elimination, word problems</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(6)">6</span></td><td><strong>Exponents &amp; Polynomials</strong></td><td>Exponent laws, add/subtract/multiply polynomials</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(7)">7</span></td><td><strong>Factoring &amp; Quadratic Equations</strong></td><td>GCF, trinomials, difference of squares, quadratic formula</td></tr>
-      <tr><td><span class="wk-badge" onclick="showWeek(8)">8</span></td><td><strong>Statistics &amp; Data Analysis</strong></td><td>Central tendency, spread, scatter plots, regression</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(1)">1</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-1" style="width:0%"></div></div><div class="week-prog-text" id="wpt-1">0 / 5</div></td><td><strong>Number Systems &amp; Real Numbers</strong></td><td>Real numbers, properties, order of operations, absolute value</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(2)">2</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-2" style="width:0%"></div></div><div class="week-prog-text" id="wpt-2">0 / 5</div></td><td><strong>Linear Equations &amp; Inequalities</strong></td><td>One/multi-step equations, literal equations, inequalities</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(3)">3</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-3" style="width:0%"></div></div><div class="week-prog-text" id="wpt-3">0 / 4</div></td><td><strong>Functions &amp; Relations</strong></td><td>Domain/range, function notation, evaluation</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(4)">4</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-4" style="width:0%"></div></div><div class="week-prog-text" id="wpt-4">0 / 4</div></td><td><strong>Graphing Linear Functions</strong></td><td>Slope, slope-intercept, point-slope, standard form</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(5)">5</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-5" style="width:0%"></div></div><div class="week-prog-text" id="wpt-5">0 / 5</div></td><td><strong>Systems of Equations</strong></td><td>Graphing, substitution, elimination, word problems</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(6)">6</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-6" style="width:0%"></div></div><div class="week-prog-text" id="wpt-6">0 / 4</div></td><td><strong>Exponents &amp; Polynomials</strong></td><td>Exponent laws, add/subtract/multiply polynomials</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(7)">7</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-7" style="width:0%"></div></div><div class="week-prog-text" id="wpt-7">0 / 5</div></td><td><strong>Factoring &amp; Quadratic Equations</strong></td><td>GCF, trinomials, difference of squares, quadratic formula</td></tr>
+      <tr><td><span class="wk-badge" onclick="showWeek(8)">8</span><div class="week-prog-bar"><div class="week-prog-fill" id="wpf-8" style="width:0%"></div></div><div class="week-prog-text" id="wpt-8">0 / 5</div></td><td><strong>Statistics &amp; Data Analysis</strong></td><td>Central tendency, spread, scatter plots, regression</td></tr>
     </tbody>
   </table>
 </div>
@@ -249,7 +460,7 @@
 
   <!-- 1.1 -->
   <div class="topic-card" id="t1-1">
-    <div class="topic-header" onclick="toggleTopic('t1-1')"><div class="topic-num">1.1</div><h3>The Real Number System</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t1-1')"><div class="topic-num">1.1</div><h3>The Real Number System</h3><button class="complete-btn" id="cb-t1-1" onclick="completeTopic('t1-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-1-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-1-1')">Sample Problems</button></div>
       <div id="exp-1-1" class="tab-pane active"><div class="explanation">
@@ -293,7 +504,7 @@
 
   <!-- 1.2 -->
   <div class="topic-card" id="t1-2">
-    <div class="topic-header" onclick="toggleTopic('t1-2')"><div class="topic-num">1.2</div><h3>Properties of Real Numbers</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t1-2')"><div class="topic-num">1.2</div><h3>Properties of Real Numbers</h3><button class="complete-btn" id="cb-t1-2" onclick="completeTopic('t1-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-1-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-1-2')">Sample Problems</button></div>
       <div id="exp-1-2" class="tab-pane active"><div class="explanation">
@@ -327,7 +538,7 @@
 
   <!-- 1.3 -->
   <div class="topic-card" id="t1-3">
-    <div class="topic-header" onclick="toggleTopic('t1-3')"><div class="topic-num">1.3</div><h3>Order of Operations (PEMDAS)</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t1-3')"><div class="topic-num">1.3</div><h3>Order of Operations (PEMDAS)</h3><button class="complete-btn" id="cb-t1-3" onclick="completeTopic('t1-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-1-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-1-3')">Sample Problems</button></div>
       <div id="exp-1-3" class="tab-pane active"><div class="explanation">
@@ -365,7 +576,7 @@ Add/Sub (L→R):         11 − 2 = 9</pre></div></div>
 
   <!-- 1.4 -->
   <div class="topic-card" id="t1-4">
-    <div class="topic-header" onclick="toggleTopic('t1-4')"><div class="topic-num">1.4</div><h3>Absolute Value</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t1-4')"><div class="topic-num">1.4</div><h3>Absolute Value</h3><button class="complete-btn" id="cb-t1-4" onclick="completeTopic('t1-4',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-1-4')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-1-4')">Sample Problems</button></div>
       <div id="exp-1-4" class="tab-pane active"><div class="explanation">
@@ -394,7 +605,7 @@ The result is ALWAYS ≥ 0</div>
   </div>
 
   <!-- WS1 -->
-  <div class="topic-card" id="ws1"><div class="topic-header" onclick="toggleTopic('ws1')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 1 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws1"><div class="topic-header" onclick="toggleTopic('ws1')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 1 Practice Worksheet</h3><button class="complete-btn" id="cb-ws1" onclick="completeTopic('ws1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Number Classification</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">Classify all categories: −12, 0.5, √16, √10, 7/3, 0, −1/4<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">−12:Int/Rat/Real | 0.5:Rat/Real | √16=4:Nat/Whole/Int/Rat/Real | √10:Irrat/Real | 7/3:Rat/Real | 0:Whole/Int/Rat/Real | −1/4:Rat/Real</div></div></div>
@@ -434,7 +645,7 @@ The result is ALWAYS ≥ 0</div>
 
   <!-- 2.1 -->
   <div class="topic-card" id="t2-1">
-    <div class="topic-header" onclick="toggleTopic('t2-1')"><div class="topic-num">2.1</div><h3>Solving Linear Equations</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t2-1')"><div class="topic-num">2.1</div><h3>Solving Linear Equations</h3><button class="complete-btn" id="cb-t2-1" onclick="completeTopic('t2-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-2-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-2-1')">Sample Problems</button></div>
       <div id="exp-2-1" class="tab-pane active"><div class="explanation">
@@ -475,7 +686,7 @@ No solution exists.</pre></div></div>
 
   <!-- 2.2 -->
   <div class="topic-card" id="t2-2">
-    <div class="topic-header" onclick="toggleTopic('t2-2')"><div class="topic-num">2.2</div><h3>Literal Equations</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t2-2')"><div class="topic-num">2.2</div><h3>Literal Equations</h3><button class="complete-btn" id="cb-t2-2" onclick="completeTopic('t2-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-2-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-2-2')">Sample Problems</button></div>
       <div id="exp-2-2" class="tab-pane active"><div class="explanation">
@@ -505,7 +716,7 @@ Subtract b₁:   b₂ = 2A/h − b₁</pre></div></div>
 
   <!-- 2.3 -->
   <div class="topic-card" id="t2-3">
-    <div class="topic-header" onclick="toggleTopic('t2-3')"><div class="topic-num">2.3</div><h3>Linear Inequalities</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t2-3')"><div class="topic-num">2.3</div><h3>Linear Inequalities</h3><button class="complete-btn" id="cb-t2-3" onclick="completeTopic('t2-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-2-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-2-3')">Sample Problems</button></div>
       <div id="exp-2-3" class="tab-pane active"><div class="explanation">
@@ -535,7 +746,7 @@ Divide by −2 (FLIP!): x &gt; −4</pre></div></div>
 
   <!-- 2.4 -->
   <div class="topic-card" id="t2-4">
-    <div class="topic-header" onclick="toggleTopic('t2-4')"><div class="topic-num">2.4</div><h3>Compound Inequalities &amp; Absolute Value Equations</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t2-4')"><div class="topic-num">2.4</div><h3>Compound Inequalities &amp; Absolute Value Equations</h3><button class="complete-btn" id="cb-t2-4" onclick="completeTopic('t2-4',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-2-4')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-2-4')">Sample Problems</button></div>
       <div id="exp-2-4" class="tab-pane active"><div class="explanation">
@@ -570,7 +781,7 @@ Divide by 3: −10/3 &lt; x &lt; 2</pre></div></div>
   </div>
 
   <!-- WS2 -->
-  <div class="topic-card" id="ws2"><div class="topic-header" onclick="toggleTopic('ws2')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 2 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws2"><div class="topic-header" onclick="toggleTopic('ws2')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 2 Practice Worksheet</h3><button class="complete-btn" id="cb-ws2" onclick="completeTopic('ws2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Equations</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">5x − 3 = 17<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">x = 4</div></div></div>
@@ -609,7 +820,7 @@ Divide by 3: −10/3 &lt; x &lt; 2</pre></div></div>
   </ul></div>
 
   <div class="topic-card" id="t3-1">
-    <div class="topic-header" onclick="toggleTopic('t3-1')"><div class="topic-num">3.1</div><h3>Relations vs. Functions</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t3-1')"><div class="topic-num">3.1</div><h3>Relations vs. Functions</h3><button class="complete-btn" id="cb-t3-1" onclick="completeTopic('t3-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-3-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-3-1')">Sample Problems</button></div>
       <div id="exp-3-1" class="tab-pane active"><div class="explanation">
@@ -633,7 +844,7 @@ Divide by 3: −10/3 &lt; x &lt; 2</pre></div></div>
   </div>
 
   <div class="topic-card" id="t3-2">
-    <div class="topic-header" onclick="toggleTopic('t3-2')"><div class="topic-num">3.2</div><h3>Domain and Range</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t3-2')"><div class="topic-num">3.2</div><h3>Domain and Range</h3><button class="complete-btn" id="cb-t3-2" onclick="completeTopic('t3-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-3-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-3-2')">Sample Problems</button></div>
       <div id="exp-3-2" class="tab-pane active"><div class="explanation">
@@ -664,7 +875,7 @@ Interval notation:
   </div>
 
   <div class="topic-card" id="t3-3">
-    <div class="topic-header" onclick="toggleTopic('t3-3')"><div class="topic-num">3.3</div><h3>Function Notation &amp; Evaluation</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t3-3')"><div class="topic-num">3.3</div><h3>Function Notation &amp; Evaluation</h3><button class="complete-btn" id="cb-t3-3" onclick="completeTopic('t3-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-3-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-3-3')">Sample Problems</button></div>
       <div id="exp-3-3" class="tab-pane active"><div class="explanation">
@@ -696,7 +907,7 @@ Step 2: f(5) = 2(5)+1 = 11</pre></div></div>
     </div>
   </div>
 
-  <div class="topic-card" id="ws3"><div class="topic-header" onclick="toggleTopic('ws3')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 3 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws3"><div class="topic-header" onclick="toggleTopic('ws3')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 3 Practice Worksheet</h3><button class="complete-btn" id="cb-ws3" onclick="completeTopic('ws3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Functions</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">Is {(2,3),(4,3),(6,3)} a function?<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">Yes — each input gives exactly one output (outputs can repeat)</div></div></div>
@@ -729,7 +940,7 @@ Step 2: f(5) = 2(5)+1 = 11</pre></div></div>
   </ul></div>
 
   <div class="topic-card" id="t4-1">
-    <div class="topic-header" onclick="toggleTopic('t4-1')"><div class="topic-num">4.1</div><h3>Slope</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t4-1')"><div class="topic-num">4.1</div><h3>Slope</h3><button class="complete-btn" id="cb-t4-1" onclick="completeTopic('t4-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-4-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-4-1')">Sample Problems</button></div>
       <div id="exp-4-1" class="tab-pane active"><div class="explanation">
@@ -757,7 +968,7 @@ Undefined slope     → vertical line (x = constant) ↕</div>
   </div>
 
   <div class="topic-card" id="t4-2">
-    <div class="topic-header" onclick="toggleTopic('t4-2')"><div class="topic-num">4.2</div><h3>Three Forms of Linear Equations</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t4-2')"><div class="topic-num">4.2</div><h3>Three Forms of Linear Equations</h3><button class="complete-btn" id="cb-t4-2" onclick="completeTopic('t4-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-4-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-4-2')">Sample Problems</button></div>
       <div id="exp-4-2" class="tab-pane active"><div class="explanation">
@@ -788,7 +999,7 @@ y−3 = 2(x−2)  →  y = 2x−1</pre></div></div>
   </div>
 
   <div class="topic-card" id="t4-3">
-    <div class="topic-header" onclick="toggleTopic('t4-3')"><div class="topic-num">4.3</div><h3>Parallel and Perpendicular Lines</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t4-3')"><div class="topic-num">4.3</div><h3>Parallel and Perpendicular Lines</h3><button class="complete-btn" id="cb-t4-3" onclick="completeTopic('t4-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-4-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-4-3')">Sample Problems</button></div>
       <div id="exp-4-3" class="tab-pane active"><div class="explanation">
@@ -816,7 +1027,7 @@ y−3 = −2(x−1)  →  y = −2x+2+3 = −2x+5</pre></div></div>
     </div>
   </div>
 
-  <div class="topic-card" id="ws4"><div class="topic-header" onclick="toggleTopic('ws4')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 4 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws4"><div class="topic-header" onclick="toggleTopic('ws4')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 4 Practice Worksheet</h3><button class="complete-btn" id="cb-ws4" onclick="completeTopic('ws4',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Slope</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">(2,5) and (8,17)<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">m=2</div></div></div>
@@ -849,7 +1060,7 @@ y−3 = −2(x−1)  →  y = −2x+2+3 = −2x+5</pre></div></div>
   </ul></div>
 
   <div class="topic-card" id="t5-1">
-    <div class="topic-header" onclick="toggleTopic('t5-1')"><div class="topic-num">5.1</div><h3>Types of Systems &amp; Graphing Method</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t5-1')"><div class="topic-num">5.1</div><h3>Types of Systems &amp; Graphing Method</h3><button class="complete-btn" id="cb-t5-1" onclick="completeTopic('t5-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-5-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-5-1')">Sample Problems</button></div>
       <div id="exp-5-1" class="tab-pane active"><div class="explanation">
@@ -876,7 +1087,7 @@ Both pass through (1,3) → Solution: (1, 3)</pre></div></div>
   </div>
 
   <div class="topic-card" id="t5-2">
-    <div class="topic-header" onclick="toggleTopic('t5-2')"><div class="topic-num">5.2</div><h3>Substitution Method</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t5-2')"><div class="topic-num">5.2</div><h3>Substitution Method</h3><button class="complete-btn" id="cb-t5-2" onclick="completeTopic('t5-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-5-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-5-2')">Sample Problems</button></div>
       <div id="exp-5-2" class="tab-pane active"><div class="explanation">
@@ -907,7 +1118,7 @@ x=2(−4)+3=−5</pre></div></div>
   </div>
 
   <div class="topic-card" id="t5-3">
-    <div class="topic-header" onclick="toggleTopic('t5-3')"><div class="topic-num">5.3</div><h3>Elimination Method</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t5-3')"><div class="topic-num">5.3</div><h3>Elimination Method</h3><button class="complete-btn" id="cb-t5-3" onclick="completeTopic('t5-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-5-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-5-3')">Sample Problems</button></div>
       <div id="exp-5-3" class="tab-pane active"><div class="explanation">
@@ -939,7 +1150,7 @@ Back-sub: 2x+5=11  →  x=3</pre></div></div>
   </div>
 
   <div class="topic-card" id="t5-4">
-    <div class="topic-header" onclick="toggleTopic('t5-4')"><div class="topic-num">5.4</div><h3>Word Problems with Systems</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t5-4')"><div class="topic-num">5.4</div><h3>Word Problems with Systems</h3><button class="complete-btn" id="cb-t5-4" onclick="completeTopic('t5-4',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-5-4')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-5-4')">Sample Problems</button></div>
       <div id="exp-5-4" class="tab-pane active"><div class="explanation">
@@ -971,7 +1182,7 @@ Add: 2b=25  →  b=12.5,  c=2.5</pre></div></div>
     </div>
   </div>
 
-  <div class="topic-card" id="ws5"><div class="topic-header" onclick="toggleTopic('ws5')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 5 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws5"><div class="topic-header" onclick="toggleTopic('ws5')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 5 Practice Worksheet</h3><button class="complete-btn" id="cb-ws5" onclick="completeTopic('ws5',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Classify</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">y=2x−1 and y=2x+5<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">No solution (same slope, parallel)</div></div></div>
@@ -1005,7 +1216,7 @@ Add: 2b=25  →  b=12.5,  c=2.5</pre></div></div>
   </ul></div>
 
   <div class="topic-card" id="t6-1">
-    <div class="topic-header" onclick="toggleTopic('t6-1')"><div class="topic-num">6.1</div><h3>Laws of Exponents</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t6-1')"><div class="topic-num">6.1</div><h3>Laws of Exponents</h3><button class="complete-btn" id="cb-t6-1" onclick="completeTopic('t6-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-6-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-6-1')">Sample Problems</button></div>
       <div id="exp-6-1" class="tab-pane active"><div class="explanation">
@@ -1035,7 +1246,7 @@ Add: 2b=25  →  b=12.5,  c=2.5</pre></div></div>
   </div>
 
   <div class="topic-card" id="t6-2">
-    <div class="topic-header" onclick="toggleTopic('t6-2')"><div class="topic-num">6.2</div><h3>Introduction to Polynomials — Add &amp; Subtract</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t6-2')"><div class="topic-num">6.2</div><h3>Introduction to Polynomials — Add &amp; Subtract</h3><button class="complete-btn" id="cb-t6-2" onclick="completeTopic('t6-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-6-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-6-2')">Sample Problems</button></div>
       <div id="exp-6-2" class="tab-pane active"><div class="explanation">
@@ -1057,7 +1268,7 @@ Combine: 3x²+4x−5</pre></div></div>
   </div>
 
   <div class="topic-card" id="t6-3">
-    <div class="topic-header" onclick="toggleTopic('t6-3')"><div class="topic-num">6.3</div><h3>Multiplying Polynomials</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t6-3')"><div class="topic-num">6.3</div><h3>Multiplying Polynomials</h3><button class="complete-btn" id="cb-t6-3" onclick="completeTopic('t6-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-6-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-6-3')">Sample Problems</button></div>
       <div id="exp-6-3" class="tab-pane active"><div class="explanation">
@@ -1097,7 +1308,7 @@ Add: x³+(−3+2)x²+(5−6)x+10 = x³−x²−x+10</pre></div></div>
     </div>
   </div>
 
-  <div class="topic-card" id="ws6"><div class="topic-header" onclick="toggleTopic('ws6')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 6 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws6"><div class="topic-header" onclick="toggleTopic('ws6')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 6 Practice Worksheet</h3><button class="complete-btn" id="cb-ws6" onclick="completeTopic('ws6',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Exponent Rules</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">x⁵·x³<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">x⁸</div></div></div>
@@ -1131,7 +1342,7 @@ Add: x³+(−3+2)x²+(5−6)x+10 = x³−x²−x+10</pre></div></div>
   </ul></div>
 
   <div class="topic-card" id="t7-1">
-    <div class="topic-header" onclick="toggleTopic('t7-1')"><div class="topic-num">7.1</div><h3>GCF Factoring</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t7-1')"><div class="topic-num">7.1</div><h3>GCF Factoring</h3><button class="complete-btn" id="cb-t7-1" onclick="completeTopic('t7-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-7-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-7-1')">Sample Problems</button></div>
       <div id="exp-7-1" class="tab-pane active"><div class="explanation">
@@ -1157,7 +1368,7 @@ Add: x³+(−3+2)x²+(5−6)x+10 = x³−x²−x+10</pre></div></div>
   </div>
 
   <div class="topic-card" id="t7-2">
-    <div class="topic-header" onclick="toggleTopic('t7-2')"><div class="topic-num">7.2</div><h3>Factoring Trinomials</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t7-2')"><div class="topic-num">7.2</div><h3>Factoring Trinomials</h3><button class="complete-btn" id="cb-t7-2" onclick="completeTopic('t7-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-7-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-7-2')">Sample Problems</button></div>
       <div id="exp-7-2" class="tab-pane active"><div class="explanation">
@@ -1190,7 +1401,7 @@ Group: 2x(x+3)+1(x+3) = (x+3)(2x+1)</pre></div></div>
   </div>
 
   <div class="topic-card" id="t7-3">
-    <div class="topic-header" onclick="toggleTopic('t7-3')"><div class="topic-num">7.3</div><h3>Special Factoring Patterns</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t7-3')"><div class="topic-num">7.3</div><h3>Special Factoring Patterns</h3><button class="complete-btn" id="cb-t7-3" onclick="completeTopic('t7-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-7-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-7-3')">Sample Problems</button></div>
       <div id="exp-7-3" class="tab-pane active"><div class="explanation">
@@ -1222,7 +1433,7 @@ Step 2 — Diff of squares: 3x(x+5)(x−5)</pre></div></div>
   </div>
 
   <div class="topic-card" id="t7-4">
-    <div class="topic-header" onclick="toggleTopic('t7-4')"><div class="topic-num">7.4</div><h3>Solving Quadratic Equations</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t7-4')"><div class="topic-num">7.4</div><h3>Solving Quadratic Equations</h3><button class="complete-btn" id="cb-t7-4" onclick="completeTopic('t7-4',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-7-4')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-7-4')">Sample Problems</button></div>
       <div id="exp-7-4" class="tab-pane active"><div class="explanation">
@@ -1260,7 +1471,7 @@ The ball hits the ground at t=4 seconds.</pre></div></div>
     </div>
   </div>
 
-  <div class="topic-card" id="ws7"><div class="topic-header" onclick="toggleTopic('ws7')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 7 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws7"><div class="topic-header" onclick="toggleTopic('ws7')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 7 Practice Worksheet</h3><button class="complete-btn" id="cb-ws7" onclick="completeTopic('ws7',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Factoring</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">15x⁴−10x³+5x²<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">5x²(3x²−2x+1)</div></div></div>
@@ -1295,7 +1506,7 @@ The ball hits the ground at t=4 seconds.</pre></div></div>
   </ul></div>
 
   <div class="topic-card" id="t8-1">
-    <div class="topic-header" onclick="toggleTopic('t8-1')"><div class="topic-num">8.1</div><h3>Measures of Central Tendency &amp; Spread</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t8-1')"><div class="topic-num">8.1</div><h3>Measures of Central Tendency &amp; Spread</h3><button class="complete-btn" id="cb-t8-1" onclick="completeTopic('t8-1',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-8-1')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-8-1')">Sample Problems</button></div>
       <div id="exp-8-1" class="tab-pane active"><div class="explanation">
@@ -1332,7 +1543,7 @@ Median = (10+12)÷2 = 11</pre></div></div>
   </div>
 
   <div class="topic-card" id="t8-2">
-    <div class="topic-header" onclick="toggleTopic('t8-2')"><div class="topic-num">8.2</div><h3>Box Plots &amp; Five-Number Summary</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t8-2')"><div class="topic-num">8.2</div><h3>Box Plots &amp; Five-Number Summary</h3><button class="complete-btn" id="cb-t8-2" onclick="completeTopic('t8-2',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-8-2')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-8-2')">Sample Problems</button></div>
       <div id="exp-8-2" class="tab-pane active"><div class="explanation">
@@ -1368,7 +1579,7 @@ The whisker stops at 25 (last non-outlier), and 42 is plotted separately as ✱<
   </div>
 
   <div class="topic-card" id="t8-3">
-    <div class="topic-header" onclick="toggleTopic('t8-3')"><div class="topic-num">8.3</div><h3>Scatter Plots &amp; Correlation</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t8-3')"><div class="topic-num">8.3</div><h3>Scatter Plots &amp; Correlation</h3><button class="complete-btn" id="cb-t8-3" onclick="completeTopic('t8-3',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-8-3')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-8-3')">Sample Problems</button></div>
       <div id="exp-8-3" class="tab-pane active"><div class="explanation">
@@ -1394,7 +1605,7 @@ The whisker stops at 25 (last non-outlier), and 42 is plotted separately as ✱<
   </div>
 
   <div class="topic-card" id="t8-4">
-    <div class="topic-header" onclick="toggleTopic('t8-4')"><div class="topic-num">8.4</div><h3>Line of Best Fit &amp; Linear Regression</h3><span class="topic-chevron">▾</span></div>
+    <div class="topic-header" onclick="toggleTopic('t8-4')"><div class="topic-num">8.4</div><h3>Line of Best Fit &amp; Linear Regression</h3><button class="complete-btn" id="cb-t8-4" onclick="completeTopic('t8-4',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
     <div class="topic-body">
       <div class="tabs"><button class="tab-btn active" onclick="switchTab(this,'exp-8-4')">Explanation</button><button class="tab-btn" onclick="switchTab(this,'prob-8-4')">Sample Problems</button></div>
       <div id="exp-8-4" class="tab-pane active"><div class="explanation">
@@ -1420,7 +1631,7 @@ y−55 = 6.8(x−1)  →  y = 6.8x + 48.2</pre></div></div>
     </div>
   </div>
 
-  <div class="topic-card" id="ws8"><div class="topic-header" onclick="toggleTopic('ws8')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 8 Practice Worksheet</h3><span class="topic-chevron">▾</span></div>
+  <div class="topic-card" id="ws8"><div class="topic-header" onclick="toggleTopic('ws8')" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)"><div class="topic-num" style="background:#dcfce7;color:#15803d">WS</div><h3 style="color:#15803d">Week 8 Practice Worksheet</h3><button class="complete-btn" id="cb-ws8" onclick="completeTopic('ws8',event)" title="Mark this topic as complete">✓ Complete</button><span class="topic-chevron">▾</span></div>
   <div class="topic-body"><div class="worksheet">
     <div class="ws-section"><h4>Section A — Central Tendency (Data: 4,9,6,2,9,11,4,9,15,1)</h4><div class="ws-problems">
       <div class="ws-item"><div class="ws-num">1</div><div class="ws-q">Find the mean<button class="ws-answer-toggle" onclick="toggleWsAnswer(this)">Answer</button><div class="ws-answer">Sum=70, Mean=7</div></div></div>
@@ -1550,21 +1761,656 @@ y−55 = 6.8(x−1)  →  y = 6.8x + 48.2</pre></div></div>
   <div class="week-nav"><button class="week-nav-btn" onclick="showHome()">← Back to Overview</button></div>
 </div>
 
+
+<!-- ═══════ GAMIFICATION OVERLAYS ═══════ -->
+<canvas id="confetti-canvas"></canvas>
+<div id="xp-notif">+25 XP</div>
+<div class="deposit-notif" id="deposit-notif">+$100 Deposited!</div>
+
+<div id="achievement-toast">
+  <div id="ach-icon">🏆</div>
+  <div>
+    <div id="ach-label">Achievement Unlocked!</div>
+    <div id="ach-name">Badge Name</div>
+    <div id="ach-desc">Badge description</div>
+  </div>
+</div>
+
+<div id="streak-badge">
+  <div style="font-size:36px">🔥</div>
+  <div style="font-size:18px;font-weight:800;color:#fbbf24;margin-top:6px" id="streak-text">On a Roll!</div>
+  <div style="font-size:12px;color:#94a3b8;margin-top:4px">5 topics completed in this session</div>
+</div>
+
+
+<!-- Reward Ledger modal -->
+<div class="modal-overlay" id="ledger-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('ledger-modal')">✕ Close</button>
+    <button class="ledger-print-btn" onclick="printLedger()">🖨️ Print</button>
+    <h2>📒 Reward Ledger</h2>
+    <p class="modal-sub">$100 per topic · $50 bonus per week completed</p>
+    <table class="ledger-table" id="ledger-table">
+      <thead><tr><th>#</th><th>Topic</th><th>Amount</th><th>Balance</th></tr></thead>
+      <tbody id="ledger-tbody"></tbody>
+    </table>
+    <div class="ledger-total">
+      <span class="total-lbl">Total Earned</span>
+      <span class="total-val" id="ledger-total-val">$0</span>
+    </div>
+  </div>
+</div>
+
+<!-- Badges modal -->
+<div class="modal-overlay" id="badges-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('badges-modal')">✕ Close</button>
+    <h2>🏅 Mission Patches</h2>
+    <p class="modal-sub" id="badges-subtitle">0 of 15 badges earned</p>
+    <div class="badges-grid" id="badges-grid"></div>
+  </div>
+</div>
+
+<!-- Certificate modal -->
+<div class="modal-overlay" id="cert-modal">
+  <div class="modal-box cert-box">
+    <button class="modal-close" onclick="closeModal('cert-modal')" style="background:#f1f5f9;color:#334155;">✕ Close</button>
+    <div class="cert-title">Certificate of Achievement</div>
+    <div class="cert-name">🌌 9th Grade Algebra I</div>
+    <div class="cert-seal">🎓</div>
+    <div class="cert-sub">
+      This certifies that an aspiring<br>
+      <strong>Galaxy Brain Explorer</strong><br>
+      has successfully completed the complete<br>
+      8-Week Algebra I Curriculum covering<br>
+      all 32 topics from Number Systems to Statistics.
+    </div>
+    <div class="cert-date" id="cert-date"></div>
+    <br>
+    <button class="cert-btn" onclick="window.print()">🖨️ Print Certificate</button>
+  </div>
+</div>
+
+<!-- Fun Facts / Mission Logs section -->
+<div id="fun-facts-section" class="week-section">
+  <div class="appendix-section" style="background:#0f172a;border:1px solid #334155;">
+    <h2 style="color:#fbbf24;">🌌 Mission Logs — Real World Math</h2>
+    <p style="font-size:13px;color:#64748b;margin-bottom:20px;">Complete each week to unlock how that math is used in the real world. These are your mission field reports from across the galaxy.</p>
+    <div class="fun-facts-grid" id="fun-facts-grid"></div>
+  </div>
+  <div class="week-nav"><button class="week-nav-btn" onclick="showHome()">← Back to Overview</button></div>
+</div>
+
 </div></div><!-- #content #main -->
 
+
 <script>
-function showHome(){hideAll();document.getElementById('home').style.display='block';updateNav(null);updateProgress(0);document.getElementById('main').scrollTop=0;}
-function showWeek(n){hideAll();const el=document.getElementById('week'+n);if(el){el.classList.add('active');}updateNav(n);updateProgress(n/8*100);const firstTopic=el?el.querySelector('.topic-card'):null;if(firstTopic&&!firstTopic.classList.contains('open')){firstTopic.classList.add('open');}document.getElementById('main').scrollTop=0;}
-function showAppendix(id){hideAll();const el=document.getElementById('app-'+id);if(el)el.classList.add('active');updateNav(null);document.getElementById('main').scrollTop=0;}
-function hideAll(){document.getElementById('home').style.display='none';document.querySelectorAll('.week-section').forEach(s=>s.classList.remove('active'));}
-function updateNav(activeWeek){document.querySelectorAll('.nav-week-btn').forEach(btn=>btn.classList.remove('active'));document.querySelectorAll('.nav-topics').forEach(t=>t.classList.remove('open'));if(activeWeek){const nb=document.querySelector('#nav-w'+activeWeek+' .nav-week-btn');const nt=document.getElementById('nt'+activeWeek);if(nb)nb.classList.add('active');if(nt)nt.classList.add('open');}}
-function updateProgress(pct){document.getElementById('progress-bar').style.width=pct+'%';}
+// ═══════════════════════════════════════════
+// GAMIFICATION ENGINE — 9th Grade Math
+// ═══════════════════════════════════════════
+
+const RANKS = [
+  {name:'Cadet',       icon:'🚀', min:0,    next:150},
+  {name:'Astronaut',   icon:'🌙', min:150,  next:350},
+  {name:'Pilot',       icon:'⭐', min:350,  next:650},
+  {name:'Commander',   icon:'🪐', min:650,  next:1000},
+  {name:'Captain',     icon:'🌟', min:1000, next:1400},
+  {name:'Galaxy Brain',icon:'🌌', min:1400, next:Infinity},
+];
+
+const WEEK_TOPICS = {
+  1:['t1-1','t1-2','t1-3','t1-4','ws1'],
+  2:['t2-1','t2-2','t2-3','t2-4','ws2'],
+  3:['t3-1','t3-2','t3-3','ws3'],
+  4:['t4-1','t4-2','t4-3','ws4'],
+  5:['t5-1','t5-2','t5-3','t5-4','ws5'],
+  6:['t6-1','t6-2','t6-3','ws6'],
+  7:['t7-1','t7-2','t7-3','t7-4','ws7'],
+  8:['t8-1','t8-2','t8-3','t8-4','ws8'],
+};
+
+const ALL_TOPICS = Object.values(WEEK_TOPICS).flat();
+const TOPIC_ONLY = ALL_TOPICS.filter(t => !t.startsWith('ws'));
+
+const BADGES = [
+  {id:'first_launch', icon:'🚀', name:'First Launch',       desc:'Complete your first topic'},
+  {id:'w1_clear',     icon:'📐', name:'Week 1 Clear',       desc:'Complete all Week 1 topics + worksheet'},
+  {id:'w2_clear',     icon:'⚖️', name:'Week 2 Clear',       desc:'Complete all Week 2 topics + worksheet'},
+  {id:'w3_clear',     icon:'ƒ',  name:'Week 3 Clear',       desc:'Complete all Week 3 topics + worksheet'},
+  {id:'w4_clear',     icon:'📈', name:'Week 4 Clear',       desc:'Complete all Week 4 topics + worksheet'},
+  {id:'w5_clear',     icon:'🔄', name:'Week 5 Clear',       desc:'Complete all Week 5 topics + worksheet'},
+  {id:'w6_clear',     icon:'xⁿ', name:'Week 6 Clear',       desc:'Complete all Week 6 topics + worksheet'},
+  {id:'w7_clear',     icon:'🔺', name:'Week 7 Clear',       desc:'Complete all Week 7 topics + worksheet'},
+  {id:'w8_clear',     icon:'📊', name:'Week 8 Clear',       desc:'Complete all Week 8 topics + worksheet'},
+  {id:'halfway',      icon:'💫', name:'Halfway There',      desc:'Complete 4 full weeks'},
+  {id:'all_weeks',    icon:'🌌', name:'Mission Complete',   desc:'Complete all 8 weeks'},
+  {id:'ws_warrior',   icon:'📋', name:'Worksheet Warrior',  desc:'Complete 5 worksheets'},
+  {id:'course_champ', icon:'🏆', name:'Course Champion',    desc:'Complete all 8 worksheets'},
+  {id:'on_a_roll',    icon:'🔥', name:'On a Roll',          desc:'Complete 5 topics in one session'},
+  {id:'top_class',    icon:'🌟', name:'Top of the Class',   desc:'Reach Captain rank (1000 XP)'},
+];
+
+const FUN_FACTS = {
+  1:{title:'Real Numbers & Architecture', week:'Week 1',
+     body:'Architects use irrational numbers constantly — the √2 ratio appears in the diagonal of every perfectly square room. The Parthenon's proportions use the golden ratio φ (an irrational number), and GPS coordinates are computed using transcendental numbers like π. Every real building runs on real numbers.'},
+  2:{title:'Equations & Rocket Science', week:'Week 2',
+     body:'SpaceX engineers solve literal equations every launch. The Tsiolkovsky rocket equation Δv = v_e × ln(m₀/m_f) must be rearranged to solve for fuel mass m_f before every mission. The same skill — isolating a variable — literally puts satellites in orbit.'},
+  3:{title:'Functions & Netflix Recommendations', week:'Week 3',
+     body:'Netflix's recommendation algorithm is a function: your viewing history (input) maps to a predicted rating (output). Each function must pass the "vertical line test" — every user gets exactly one recommended score per movie. Functions with 250 million inputs process in milliseconds.'},
+  4:{title:'Linear Equations & Economic Forecasting', week:'Week 4',
+     body:'The Federal Reserve uses linear regression (lines of best fit through data points) to predict inflation and set interest rates. The slope of the GDP-vs-time line IS the growth rate. When economists say "the economy grew 2.3%," they're reporting a slope.'},
+  5:{title:'Systems of Equations & GPS', week:'Week 5',
+     body:'Your phone solves a system of equations every second to find your location. It receives signals from 4+ satellites, each giving one equation. The intersection of those equations (the solution to the system) is exactly where you are — accurate to 3 meters.'},
+  6:{title:'Polynomials & Video Game Graphics', week:'Week 6',
+     body:'Every smooth curve in a video game — character faces, car bodies, terrain — is a Bézier curve, a polynomial equation. Pixar renders each frame of a movie using millions of polynomial calculations. Without polynomials, every game character would look like a blocky Minecraft figure.'},
+  7:{title:'Quadratics & Projectile Motion', week:'Week 7',
+     body:'Angry Birds is literally a quadratic equation simulator. The path of every thrown object follows h = -16t² + v₀t + h₀ — a quadratic you can now solve. Engineers use this for cannon trajectories, basketball shot angles, and calculating where a baseball will land.'},
+  8:{title:'Statistics & Sports Analytics', week:'Week 8',
+     body:'When ESPN shows a pitcher's "ERA" or a basketball player's "true shooting percentage," that's your statistics vocabulary in action. Teams like the Houston Astros and Golden State Warriors use scatter plots, regression lines, and outlier detection to decide which players to sign — the same tools from your Week 8 worksheets.'},
+};
+
+// ───────── State ─────────
+let STATE = {
+  xp: 0,
+  completed: [],   // array of topic IDs (serializable)
+  badges: [],      // array of badge IDs
+  sessionCount: 0, // topics completed this session (for on-a-roll)
+  weekBonuses: [], // weeks that received bonus XP
+  ledger: [], // [{id, label, amount, type}]
+};
+
+
+// ───────── Monetary Rewards ─────────
+const TOPIC_LABELS = {
+  't1-1':'1.1 Real Number System','t1-2':'1.2 Properties','t1-3':'1.3 PEMDAS','t1-4':'1.4 Absolute Value',
+  't2-1':'2.1 Linear Equations','t2-2':'2.2 Literal Equations','t2-3':'2.3 Inequalities','t2-4':'2.4 Compound & Abs',
+  't3-1':'3.1 Relations vs Functions','t3-2':'3.2 Domain & Range','t3-3':'3.3 Function Notation',
+  't4-1':'4.1 Slope','t4-2':'4.2 Three Forms','t4-3':'4.3 Parallel & Perp',
+  't5-1':'5.1 Types & Graphing','t5-2':'5.2 Substitution','t5-3':'5.3 Elimination','t5-4':'5.4 Word Problems',
+  't6-1':'6.1 Laws of Exponents','t6-2':'6.2 Polynomials Add/Sub','t6-3':'6.3 Multiplying Polynomials',
+  't7-1':'7.1 GCF Factoring','t7-2':'7.2 Factoring Trinomials','t7-3':'7.3 Special Patterns','t7-4':'7.4 Solving Quadratics',
+  't8-1':'8.1 Central Tendency','t8-2':'8.2 Box Plots','t8-3':'8.3 Scatter Plots','t8-4':'8.4 Line of Best Fit',
+  'ws1':'Week 1 Worksheet','ws2':'Week 2 Worksheet','ws3':'Week 3 Worksheet','ws4':'Week 4 Worksheet',
+  'ws5':'Week 5 Worksheet','ws6':'Week 6 Worksheet','ws7':'Week 7 Worksheet','ws8':'Week 8 Worksheet',
+};
+
+function getMoneyBalance(){
+  return (STATE.ledger||[]).reduce((sum,e)=>sum+e.amount,0);
+}
+
+function addLedgerEntry(id, label, amount, type){
+  if(!STATE.ledger) STATE.ledger=[];
+  STATE.ledger.push({id, label, amount, type, ts: new Date().toLocaleDateString()});
+}
+
+function removeLedgerEntry(id){
+  if(!STATE.ledger) return;
+  STATE.ledger = STATE.ledger.filter(e=>e.id!==id);
+}
+
+function showDepositNotif(msg){
+  const el = document.getElementById('deposit-notif');
+  if(!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 2500);
+}
+
+function updateMoneyUI(){
+  const bal = getMoneyBalance();
+  const topicDone = (STATE.completed||[]).filter(t=>!t.startsWith('ws')).length;
+  const balFmt = '$'+bal.toLocaleString();
+  const b1 = document.getElementById('money-balance');
+  if(b1) b1.textContent = balFmt;
+  const dv = document.getElementById('dash-money-val');
+  if(dv) dv.textContent = balFmt;
+  const ds = document.getElementById('dash-money-sub');
+  if(ds) ds.textContent = topicDone + ' topics × $100 + bonuses = ' + balFmt;
+}
+
+function openLedger(){
+  const tbody = document.getElementById('ledger-tbody');
+  if(!tbody) return;
+  const entries = STATE.ledger || [];
+  if(entries.length === 0){
+    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#475569;padding:20px;">No entries yet. Start completing topics!</td></tr>';
+  } else {
+    let running = 0;
+    tbody.innerHTML = entries.map((e,i)=>{
+      running += e.amount;
+      return `<tr>
+        <td style="color:#64748b;">${i+1}</td>
+        <td>${e.label}${e.ts?' <span style="font-size:10px;color:#475569;">'+e.ts+'</span>':''}</td>
+        <td class="amt">$${e.amount}</td>
+        <td class="bal">$${running.toLocaleString()}</td>
+      </tr>`;
+    }).join('');
+  }
+  const total = getMoneyBalance();
+  const tv = document.getElementById('ledger-total-val');
+  if(tv) tv.textContent = '$'+total.toLocaleString();
+  document.getElementById('ledger-modal').classList.add('open');
+}
+
+function printLedger(){
+  const entries = STATE.ledger || [];
+  const total = getMoneyBalance();
+  let running = 0;
+  const rows = entries.map((e,i)=>{
+    running += e.amount;
+    return `<tr><td>${i+1}</td><td>${e.label}</td><td>$${e.amount}</td><td>$${running}</td></tr>`;
+  }).join('');
+  const win = window.open('','_blank');
+  win.document.write(``);
+  win.print();
+}
+
+function loadState(){
+  try {
+    const saved = localStorage.getItem('math9_v3');
+    if(saved){ const d=JSON.parse(saved); Object.assign(STATE,d); }
+  } catch(e){}
+}
+function saveState(){
+  try { localStorage.setItem('math9_v3', JSON.stringify(STATE)); } catch(e){}
+}
+
+function completedSet(){ return new Set(STATE.completed); }
+
+// ───────── Core: Mark Complete ─────────
+function completeTopic(id, event){
+  if(event){ event.stopPropagation(); event.preventDefault(); }
+  const done = completedSet();
+  if(done.has(id)){
+    // Undo
+    const xpLost = id.startsWith('ws') ? 50 : 25;
+    STATE.completed = STATE.completed.filter(x=>x!==id);
+    STATE.xp = Math.max(0, STATE.xp - xpLost);
+    // Remove money entry
+    removeLedgerEntry(id);
+    // Remove week bonus money entry
+    const week0 = getWeekForTopic(id);
+    if(week0 && STATE.weekBonuses.includes(week0)){
+      STATE.weekBonuses = STATE.weekBonuses.filter(w=>w!==week0);
+      STATE.xp = Math.max(0, STATE.xp - 75);
+      removeLedgerEntry('wk_bonus_'+week0);
+    }
+    updateAllUI();
+    updateMoneyUI();
+    saveState();
+    return;
+  }
+  // Mark complete
+  const xp = id.startsWith('ws') ? 50 : 25;
+  STATE.completed.push(id);
+  STATE.xp += xp;
+  STATE.sessionCount++;
+  // Money reward
+  const moneyAmt = id.startsWith('ws') ? 150 : 100;
+  const topicLabel = TOPIC_LABELS[id] || id;
+  addLedgerEntry(id, topicLabel, moneyAmt, id.startsWith('ws')?'worksheet':'topic');
+  setTimeout(()=>showDepositNotif('💰 $'+moneyAmt+' Deposited!'), 300);
+  showXPGain('+' + xp + ' XP ⚡');
+  checkWeekBonus(id);
+  checkBadges();
+  updateAllUI();
+  updateMoneyUI();
+  saveState();
+}
+
+function getWeekForTopic(id){
+  for(const [w, topics] of Object.entries(WEEK_TOPICS)){
+    if(topics.includes(id)) return parseInt(w);
+  }
+  return null;
+}
+
+function checkWeekBonus(justCompleted){
+  const week = getWeekForTopic(justCompleted);
+  if(!week || STATE.weekBonuses.includes(week)) return;
+  const done = completedSet();
+  const allDone = WEEK_TOPICS[week].every(t=>done.has(t));
+  if(allDone){
+    STATE.weekBonuses.push(week);
+    STATE.xp += 75;
+    addLedgerEntry('wk_bonus_'+week, 'Week '+week+' Completion Bonus', 50, 'bonus');
+    setTimeout(()=>{
+      showXPGain('+75 XP 🌟 Week ' + week + ' Bonus!');
+      showDepositNotif('🎉 $50 Week Bonus Deposited!');
+      launchConfetti();
+    }, 600);
+  }
+}
+
+// ───────── Badges ─────────
+function checkBadges(){
+  const done = completedSet();
+  const weeksComplete = Object.entries(WEEK_TOPICS)
+    .filter(([w, topics]) => topics.every(t=>done.has(t)))
+    .map(([w])=>parseInt(w));
+  const wsComplete = ALL_TOPICS.filter(t=>t.startsWith('ws') && done.has(t)).length;
+
+  const checks = {
+    first_launch: ()=> STATE.completed.length >= 1,
+    w1_clear:     ()=> WEEK_TOPICS[1].every(t=>done.has(t)),
+    w2_clear:     ()=> WEEK_TOPICS[2].every(t=>done.has(t)),
+    w3_clear:     ()=> WEEK_TOPICS[3].every(t=>done.has(t)),
+    w4_clear:     ()=> WEEK_TOPICS[4].every(t=>done.has(t)),
+    w5_clear:     ()=> WEEK_TOPICS[5].every(t=>done.has(t)),
+    w6_clear:     ()=> WEEK_TOPICS[6].every(t=>done.has(t)),
+    w7_clear:     ()=> WEEK_TOPICS[7].every(t=>done.has(t)),
+    w8_clear:     ()=> WEEK_TOPICS[8].every(t=>done.has(t)),
+    halfway:      ()=> weeksComplete.length >= 4,
+    all_weeks:    ()=> weeksComplete.length >= 8,
+    ws_warrior:   ()=> wsComplete >= 5,
+    course_champ: ()=> wsComplete >= 8,
+    on_a_roll:    ()=> STATE.sessionCount >= 5,
+    top_class:    ()=> STATE.xp >= 1000,
+  };
+  const badgeSet = new Set(STATE.badges);
+  for(const [id, check] of Object.entries(checks)){
+    if(!badgeSet.has(id) && check()){
+      STATE.badges.push(id);
+      badgeSet.add(id);
+      const badge = BADGES.find(b=>b.id===id);
+      if(badge) setTimeout(()=>showAchievement(badge), 800);
+    }
+  }
+}
+
+// ───────── Rank ─────────
+function getRank(xp){
+  for(let i=RANKS.length-1;i>=0;i--){
+    if(xp >= RANKS[i].min) return RANKS[i];
+  }
+  return RANKS[0];
+}
+
+// ───────── UI Updates ─────────
+function updateAllUI(){
+  const done = completedSet();
+  const rank = getRank(STATE.xp);
+  const nextRank = RANKS.find(r=>r.min > STATE.xp);
+  const pct = nextRank ? Math.min(100, (STATE.xp - rank.min)/(nextRank.min - rank.min)*100) : 100;
+
+  // Sidebar panel
+  const gpRank = document.getElementById('gp-rank-text');
+  if(gpRank) gpRank.textContent = rank.icon + ' ' + rank.name;
+  const gpXpNum = document.getElementById('gp-xp-num');
+  if(gpXpNum) gpXpNum.textContent = STATE.xp + ' XP';
+  const gpFill = document.getElementById('gp-xp-fill');
+  if(gpFill) gpFill.style.width = pct + '%';
+  const gpLabel = document.getElementById('gp-xp-label');
+  if(gpLabel) gpLabel.textContent = nextRank ? STATE.xp + ' / ' + nextRank.min + ' XP to ' + nextRank.name : 'MAX RANK 🌌';
+  const topicsDone = TOPIC_ONLY.filter(t=>done.has(t)).length;
+  const weeksDone = Object.entries(WEEK_TOPICS).filter(([w,ts])=>ts.every(t=>done.has(t))).length;
+  const el=t=>document.getElementById(t);
+  if(el('gp-topics-done')) el('gp-topics-done').textContent = topicsDone;
+  if(el('gp-weeks-done')) el('gp-weeks-done').textContent = weeksDone;
+  if(el('gp-badges-done')) el('gp-badges-done').textContent = STATE.badges.length;
+  if(el('gp-badge-count')) el('gp-badge-count').textContent = STATE.badges.length;
+
+  // Dashboard
+  if(el('dash-rank-icon')) el('dash-rank-icon').textContent = rank.icon;
+  if(el('dash-rank-name')) el('dash-rank-name').textContent = rank.name;
+  if(el('dash-rank-sub')) el('dash-rank-sub').textContent = nextRank ? (nextRank.min - STATE.xp) + ' XP to reach ' + nextRank.name : 'Maximum rank achieved! 🌌';
+  if(el('dash-xp-fill')) el('dash-xp-fill').style.width = pct + '%';
+  if(el('dash-xp-text')) el('dash-xp-text').textContent = nextRank ? STATE.xp + ' / ' + nextRank.min + ' XP' : STATE.xp + ' XP — GALAXY BRAIN!';
+  if(el('dash-total-xp')) el('dash-total-xp').textContent = STATE.xp;
+  if(el('dash-topics')) el('dash-topics').textContent = topicsDone + '/' + TOPIC_ONLY.length;
+  if(el('dash-weeks')) el('dash-weeks').textContent = weeksDone + '/8';
+  if(el('dash-badges-ct')) el('dash-badges-ct').textContent = STATE.badges.length;
+
+  // Show certificate button if all weeks complete
+  if(el('cert-btn')) el('cert-btn').style.display = weeksDone >= 8 ? '' : 'none';
+
+  // Complete buttons
+  ALL_TOPICS.forEach(id=>{
+    const btn = el('cb-'+id);
+    if(!btn) return;
+    if(done.has(id)){
+      btn.classList.add('done');
+      btn.textContent = '✓ Done';
+    } else {
+      btn.classList.remove('done');
+      btn.textContent = '✓ Complete';
+    }
+    const card = el(id);
+    if(card){
+      if(done.has(id)) card.classList.add('topic-done');
+      else card.classList.remove('topic-done');
+    }
+  });
+
+  // Week progress bars in overview
+  for(let w=1;w<=8;w++){
+    const topics = WEEK_TOPICS[w];
+    const cnt = topics.filter(t=>done.has(t)).length;
+    const fill = el('wpf-'+w);
+    const txt = el('wpt-'+w);
+    if(fill) fill.style.width = (cnt/topics.length*100)+'%';
+    if(txt) txt.textContent = cnt + ' / ' + topics.length + (cnt===topics.length?' ✓':'');
+  }
+
+  // Nav week progress badges
+  for(let w=1;w<=8;w++){
+    const btn = document.querySelector('#nav-w'+w+' .nav-week-btn');
+    if(!btn) continue;
+    let prog = btn.querySelector('.nav-week-prog');
+    if(!prog){ prog=document.createElement('span'); prog.className='nav-week-prog'; btn.appendChild(prog); }
+    const topics = WEEK_TOPICS[w];
+    const cnt = topics.filter(t=>done.has(t)).length;
+    prog.textContent = cnt===topics.length ? '✓' : cnt+'/'+topics.length;
+    prog.classList.toggle('done', cnt===topics.length);
+  }
+
+  // Fun facts
+  renderFunFacts();
+  updateMoneyUI();
+}
+
+// ───────── XP Notification ─────────
+let xpTimer = null;
+function showXPGain(msg){
+  const el = document.getElementById('xp-notif');
+  if(!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  if(xpTimer) clearTimeout(xpTimer);
+  xpTimer = setTimeout(()=>el.classList.remove('show'), 2000);
+}
+
+// ───────── Achievement Toast ─────────
+let achTimer = null;
+function showAchievement(badge){
+  const toast = document.getElementById('achievement-toast');
+  if(!toast) return;
+  document.getElementById('ach-icon').textContent = badge.icon;
+  document.getElementById('ach-name').textContent = badge.name;
+  document.getElementById('ach-desc').textContent = badge.desc;
+  toast.classList.add('show');
+  if(achTimer) clearTimeout(achTimer);
+  achTimer = setTimeout(()=>toast.classList.remove('show'), 4000);
+}
+
+// ───────── Confetti ─────────
+let confettiParticles = [];
+let confettiAnim = null;
+function launchConfetti(){
+  const canvas = document.getElementById('confetti-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const colors = ['#fbbf24','#2563eb','#7c3aed','#16a34a','#f97316','#ec4899','#06b6d4'];
+  confettiParticles = Array.from({length:120}, ()=>({
+    x: Math.random()*canvas.width,
+    y: -10,
+    r: 4+Math.random()*6,
+    d: 3+Math.random()*4,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    tilt: Math.random()*10-5,
+    tiltAngle: 0,
+    tiltSpeed: Math.random()*.1+.05,
+    vx: Math.random()*4-2,
+  }));
+  if(confettiAnim) cancelAnimationFrame(confettiAnim);
+  let frame = 0;
+  function drawFrame(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    confettiParticles.forEach(p=>{
+      ctx.beginPath();
+      ctx.fillStyle=p.color;
+      p.tiltAngle += p.tiltSpeed;
+      p.y += p.d;
+      p.x += p.vx;
+      p.tilt = Math.sin(p.tiltAngle)*12;
+      ctx.ellipse(p.x+p.tilt/2, p.y, p.r, p.r/2, p.tiltAngle, 0, 2*Math.PI);
+      ctx.fill();
+    });
+    confettiParticles = confettiParticles.filter(p=>p.y<canvas.height+20);
+    frame++;
+    if(confettiParticles.length>0 && frame<300) confettiAnim=requestAnimationFrame(drawFrame);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  confettiAnim = requestAnimationFrame(drawFrame);
+}
+
+// ───────── Badges Modal ─────────
+function openBadges(){
+  const badgeSet = new Set(STATE.badges);
+  const grid = document.getElementById('badges-grid');
+  if(!grid) return;
+  grid.innerHTML = BADGES.map(b=>`
+    <div class="badge-card ${badgeSet.has(b.id)?'earned':'locked'}">
+      <div class="badge-icon">${b.icon}</div>
+      <div class="badge-name">${b.name}</div>
+      <div class="badge-desc">${badgeSet.has(b.id)?b.desc:'???'}</div>
+    </div>`).join('');
+  const sub = document.getElementById('badges-subtitle');
+  if(sub) sub.textContent = STATE.badges.length + ' of ' + BADGES.length + ' badges earned';
+  document.getElementById('badges-modal').classList.add('open');
+}
+
+// ───────── Fun Facts ─────────
+function renderFunFacts(){
+  const grid = document.getElementById('fun-facts-grid');
+  if(!grid) return;
+  const done = completedSet();
+  let html = '';
+  for(let w=1;w<=8;w++){
+    const unlocked = WEEK_TOPICS[w].every(t=>done.has(t));
+    const ff = FUN_FACTS[w];
+    html += `<div class="fun-fact-card ${unlocked?'unlocked':'locked-card'}">
+      <div class="ff-week">${ff.week}</div>
+      <div class="ff-title">${unlocked?'🔓 '+ff.title:'🔒 Locked'}</div>
+      <div class="ff-body">${unlocked?ff.body:'Complete all Week '+w+' topics to unlock this mission log.'}</div>
+    </div>`;
+  }
+  grid.innerHTML = html;
+}
+
+function showFunFacts(){
+  hideAll();
+  const el = document.getElementById('fun-facts-section');
+  if(el) el.classList.add('active');
+  renderFunFacts();
+  document.getElementById('main').scrollTop=0;
+}
+
+// ───────── Certificate ─────────
+function openCertificate(){
+  const d = new Date();
+  const dateStr = d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const dateEl = document.getElementById('cert-date');
+  if(dateEl) dateEl.textContent = 'Completed on ' + dateStr;
+  document.getElementById('cert-modal').classList.add('open');
+}
+
+// ───────── Modal helpers ─────────
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');
+}
+// Close modal on backdrop click
+document.addEventListener('click', e=>{
+  if(e.target.classList.contains('modal-overlay')) e.target.classList.remove('open');
+});
+
+// ───────── Navigation (original + progress update) ─────────
+function showHome(){
+  hideAll();
+  document.getElementById('home').style.display='block';
+  updateNav(null);
+  updateProgress(0);
+  document.getElementById('main').scrollTop=0;
+}
+function showWeek(n){
+  hideAll();
+  const el=document.getElementById('week'+n);
+  if(el){el.classList.add('active');}
+  updateNav(n);
+  updateProgress(n/8*100);
+  const firstTopic=el?el.querySelector('.topic-card'):null;
+  if(firstTopic&&!firstTopic.classList.contains('open')){firstTopic.classList.add('open');}
+  document.getElementById('main').scrollTop=0;
+}
+function showAppendix(id){
+  hideAll();
+  const el=document.getElementById('app-'+id);
+  if(el)el.classList.add('active');
+  updateNav(null);
+  document.getElementById('main').scrollTop=0;
+}
+function hideAll(){
+  document.getElementById('home').style.display='none';
+  document.querySelectorAll('.week-section').forEach(s=>s.classList.remove('active'));
+}
+function updateNav(activeWeek){
+  document.querySelectorAll('.nav-week-btn').forEach(btn=>btn.classList.remove('active'));
+  document.querySelectorAll('.nav-topics').forEach(t=>t.classList.remove('open'));
+  if(activeWeek){
+    const nb=document.querySelector('#nav-w'+activeWeek+' .nav-week-btn');
+    const nt=document.getElementById('nt'+activeWeek);
+    if(nb)nb.classList.add('active');
+    if(nt)nt.classList.add('open');
+  }
+}
+function updateProgress(pct){
+  document.getElementById('progress-bar').style.width=pct+'%';
+}
 function toggleTopic(id){document.getElementById(id).classList.toggle('open');}
-function switchTab(btn,paneId){const body=btn.closest('.topic-body');body.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));body.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(paneId).classList.add('active');}
-function toggleAnswer(el){const ans=el.nextElementSibling;const rev=el.querySelector('.problem-reveal');const open=ans.classList.toggle('show');if(rev)rev.textContent=open?'Hide':'Show Answer';}
-function toggleWsAnswer(btn){const ans=btn.nextElementSibling;ans.classList.toggle('show');btn.textContent=ans.classList.contains('show')?'Hide':'Answer';}
-function showAllAnswers(btn){const ws=btn.closest('.topic-body');ws.querySelectorAll('.ws-answer').forEach(a=>a.classList.add('show'));ws.querySelectorAll('.ws-answer-toggle').forEach(b=>b.textContent='Hide');btn.textContent='All Answers Shown';btn.style.background='#15803d';}
+function switchTab(btn,paneId){
+  const body=btn.closest('.topic-body');
+  body.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  body.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(paneId).classList.add('active');
+}
+function toggleAnswer(el){
+  const ans=el.nextElementSibling;
+  const rev=el.querySelector('.problem-reveal');
+  const open=ans.classList.toggle('show');
+  if(rev)rev.textContent=open?'Hide':'Show Answer';
+}
+function toggleWsAnswer(btn){
+  const ans=btn.nextElementSibling;
+  ans.classList.toggle('show');
+  btn.textContent=ans.classList.contains('show')?'Hide':'Answer';
+}
+function showAllAnswers(btn){
+  const ws=btn.closest('.topic-body');
+  ws.querySelectorAll('.ws-answer').forEach(a=>a.classList.add('show'));
+  ws.querySelectorAll('.ws-answer-toggle').forEach(b=>b.textContent='Hide');
+  btn.textContent='All Answers Shown';
+  btn.style.background='#15803d';
+}
+
+// ───────── Init ─────────
+loadState();
+updateAllUI();
+updateMoneyUI();
 showHome();
 </script>
+
 </body>
 </html>
