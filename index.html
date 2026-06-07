@@ -322,11 +322,126 @@
 
   #home{display:block;}
   @media(max-width:768px){body{flex-direction:column;}#sidebar{width:100%;height:auto;position:relative;}.objectives ul{grid-template-columns:1fr;}}
+
+  /* ══════════ LOGIN SCREEN ══════════ */
+  #login-screen{
+    position:fixed;inset:0;background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    z-index:99999;transition:opacity .4s;
+  }
+  #login-screen.hidden{opacity:0;pointer-events:none;}
+  .login-logo{font-size:52px;margin-bottom:6px;}
+  .login-title{font-size:28px;font-weight:900;color:#f1f5f9;margin-bottom:4px;letter-spacing:-.5px;}
+  .login-sub{font-size:14px;color:#64748b;margin-bottom:40px;}
+  .login-cards{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
+  .login-card{
+    background:#1e293b;border:2px solid #334155;border-radius:20px;
+    padding:32px 40px;text-align:center;cursor:pointer;
+    transition:all .25s cubic-bezier(.34,1.56,.64,1);min-width:180px;
+  }
+  .login-card:hover{transform:translateY(-6px) scale(1.03);border-color:var(--c);}
+  .login-card:active{transform:scale(.97);}
+  .login-avatar{font-size:52px;margin-bottom:10px;}
+  .login-name{font-size:22px;font-weight:800;color:#f1f5f9;}
+  .login-stats{font-size:12px;color:#64748b;margin-top:6px;min-height:18px;}
+  .login-xp-bar{background:#334155;border-radius:10px;height:5px;margin-top:10px;overflow:hidden;}
+  .login-xp-fill{height:5px;border-radius:10px;transition:width .4s;}
+  .login-rank{font-size:11px;font-weight:700;margin-top:6px;}
+  .login-parent-btn{
+    margin-top:40px;background:none;border:1.5px solid #334155;color:#64748b;
+    border-radius:8px;padding:8px 20px;font-size:12px;cursor:pointer;transition:all .2s;
+  }
+  .login-parent-btn:hover{border-color:#fbbf24;color:#fbbf24;}
+
+  /* ══════════ SWITCH-USER BUTTON in sidebar ══════════ */
+  #switch-user-btn{
+    display:flex;align-items:center;gap:10px;padding:9px 16px;
+    background:none;border:none;cursor:pointer;width:100%;
+    border-top:1px solid #334155;font-size:12px;color:#94a3b8;transition:background .15s;
+  }
+  #switch-user-btn:hover{background:#1e3a5f;color:#f1f5f9;}
+  #current-user-avatar{font-size:18px;}
+  #current-user-name{font-weight:700;}
+
+  /* ══════════ PARENT DASHBOARD ══════════ */
+  #parent-screen{
+    position:fixed;inset:0;background:#0f172a;
+    display:none;flex-direction:column;z-index:99998;overflow-y:auto;padding:32px 24px 60px;
+  }
+  #parent-screen.open{display:flex;}
+  .parent-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;}
+  .parent-header h1{font-size:24px;font-weight:900;color:#fbbf24;}
+  .parent-close{background:none;border:1.5px solid #334155;color:#94a3b8;border-radius:8px;padding:7px 16px;cursor:pointer;font-size:13px;}
+  .parent-close:hover{border-color:#fbbf24;color:#fbbf24;}
+  .parent-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto;width:100%;}
+  @media(max-width:640px){.parent-grid{grid-template-columns:1fr;}}
+  .parent-card{background:#1e293b;border-radius:16px;padding:24px;border:2px solid #334155;}
+  .parent-card-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #334155;}
+  .parent-card-avatar{font-size:36px;}
+  .parent-card-name{font-size:20px;font-weight:800;color:#f1f5f9;}
+  .parent-card-rank{font-size:12px;font-weight:700;margin-top:2px;}
+  .parent-stat-row{display:flex;gap:10px;margin-bottom:16px;}
+  .parent-stat{flex:1;background:#0f172a;border-radius:10px;padding:10px;text-align:center;}
+  .parent-stat-val{font-size:20px;font-weight:800;color:#93c5fd;}
+  .parent-stat-lbl{font-size:9px;color:#475569;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+  .parent-xp-track{background:#334155;border-radius:10px;height:8px;margin-bottom:5px;overflow:hidden;}
+  .parent-xp-fill{height:8px;border-radius:10px;transition:width .6s;}
+  .parent-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#475569;margin:14px 0 8px;}
+  .parent-week-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:12px;}
+  .parent-week-name{color:#94a3b8;width:140px;flex-shrink:0;}
+  .parent-week-bar{flex:1;background:#334155;border-radius:6px;height:8px;overflow:hidden;}
+  .parent-week-fill{height:8px;border-radius:6px;transition:width .5s;}
+  .parent-week-pct{font-size:11px;color:#64748b;width:32px;text-align:right;flex-shrink:0;}
+  .parent-money{background:linear-gradient(135deg,#052e16,#064e3b);border-radius:10px;padding:12px 14px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;}
+  .parent-money-val{font-size:22px;font-weight:900;color:#4ade80;font-family:'Courier New',monospace;}
+  .parent-money-lbl{font-size:10px;color:#166534;font-weight:700;}
+  .parent-badges-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .parent-badge-pill{background:#1e3a5f;border-radius:20px;padding:3px 10px;font-size:11px;color:#93c5fd;border:1px solid #2563eb;}
+
+  /* Head-to-head comparison bar */
+  .vs-section{max-width:900px;margin:24px auto 0;width:100%;}
+  .vs-card{background:#1e293b;border-radius:16px;padding:20px 24px;border:2px solid #334155;}
+  .vs-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fbbf24;margin-bottom:16px;}
+  .vs-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;font-size:12px;}
+  .vs-label{color:#64748b;width:120px;flex-shrink:0;}
+  .vs-bar-wrap{flex:1;display:flex;gap:4px;align-items:center;}
+  .vs-bar{height:12px;border-radius:6px;min-width:4px;transition:width .6s;}
+  .vs-val{font-size:11px;font-weight:700;width:50px;text-align:right;flex-shrink:0;}
+
 </style>
 </head>
 <body>
 
 <!-- SIDEBAR -->
+
+<!-- ══════ LOGIN SCREEN ══════ -->
+<div id="login-screen">
+  <div class="login-logo">🌌</div>
+  <div class="login-title">9th Grade Algebra I</div>
+  <div class="login-sub">Who's studying today?</div>
+  <div class="login-cards" id="login-cards">
+    <!-- cards injected by JS -->
+  </div>
+  <button class="login-parent-btn" onclick="openParentDashboard()">👩‍💼 Parent / Teacher View</button>
+</div>
+
+<!-- ══════ PARENT DASHBOARD ══════ -->
+<div id="parent-screen">
+  <div class="parent-header">
+    <h1>👩‍💼 Progress Dashboard</h1>
+    <button class="parent-close" onclick="closeParentDashboard()">✕ Close</button>
+  </div>
+  <div class="parent-grid" id="parent-grid">
+    <!-- filled by JS -->
+  </div>
+  <div class="vs-section">
+    <div class="vs-card">
+      <div class="vs-title">⚔️ Head-to-Head</div>
+      <div id="vs-content"><!-- filled by JS --></div>
+    </div>
+  </div>
+</div>
+
 <div id="sidebar">
   <div id="sidebar-header">
     <h1>9th Grade Math</h1>
@@ -1845,9 +1960,15 @@ y−55 = 6.8(x−1)  →  y = 6.8x + 48.2</pre></div></div>
 
 
 <script>
-// ═══════════════════════════════════════════
-// GAMIFICATION ENGINE — 9th Grade Math
-// ═══════════════════════════════════════════
+// ════════════════════════════════════════════════════════
+//  9th GRADE MATH  –  GAMIFICATION ENGINE v4
+//  Multi-student: Aashi | Ishi   |   Parent dashboard
+// ════════════════════════════════════════════════════════
+
+const STUDENTS_CFG = [
+  {id:'aashi', name:'Aashi', color:'#7c3aed', gradH:'linear-gradient(135deg,#7c3aed,#4f46e5)', avatar:'👩‍🚀'},
+  {id:'ishi',  name:'Ishi',  color:'#0891b2', gradH:'linear-gradient(135deg,#0891b2,#0e7490)', avatar:'🧑‍🚀'},
+];
 
 const RANKS = [
   {name:'Cadet',       icon:'🚀', min:0,    next:150},
@@ -1868,59 +1989,41 @@ const WEEK_TOPICS = {
   7:['t7-1','t7-2','t7-3','t7-4','ws7'],
   8:['t8-1','t8-2','t8-3','t8-4','ws8'],
 };
-
-const ALL_TOPICS = Object.values(WEEK_TOPICS).flat();
-const TOPIC_ONLY = ALL_TOPICS.filter(t => !t.startsWith('ws'));
+const ALL_TOPICS  = Object.values(WEEK_TOPICS).flat();
+const TOPIC_ONLY  = ALL_TOPICS.filter(t=>!t.startsWith('ws'));
+const WEEK_NAMES  = {1:'Number Systems',2:'Equations & Ineq.',3:'Functions',
+                     4:'Graphing Lines',5:'Systems',6:'Exponents & Poly.',
+                     7:'Factoring & Quad.',8:'Statistics'};
 
 const BADGES = [
-  {id:'first_launch', icon:'🚀', name:'First Launch',       desc:'Complete your first topic'},
-  {id:'w1_clear',     icon:'📐', name:'Week 1 Clear',       desc:'Complete all Week 1 topics + worksheet'},
-  {id:'w2_clear',     icon:'⚖️', name:'Week 2 Clear',       desc:'Complete all Week 2 topics + worksheet'},
-  {id:'w3_clear',     icon:'ƒ',  name:'Week 3 Clear',       desc:'Complete all Week 3 topics + worksheet'},
-  {id:'w4_clear',     icon:'📈', name:'Week 4 Clear',       desc:'Complete all Week 4 topics + worksheet'},
-  {id:'w5_clear',     icon:'🔄', name:'Week 5 Clear',       desc:'Complete all Week 5 topics + worksheet'},
-  {id:'w6_clear',     icon:'xⁿ', name:'Week 6 Clear',       desc:'Complete all Week 6 topics + worksheet'},
-  {id:'w7_clear',     icon:'🔺', name:'Week 7 Clear',       desc:'Complete all Week 7 topics + worksheet'},
-  {id:'w8_clear',     icon:'📊', name:'Week 8 Clear',       desc:'Complete all Week 8 topics + worksheet'},
-  {id:'halfway',      icon:'💫', name:'Halfway There',      desc:'Complete 4 full weeks'},
-  {id:'all_weeks',    icon:'🌌', name:'Mission Complete',   desc:'Complete all 8 weeks'},
-  {id:'ws_warrior',   icon:'📋', name:'Worksheet Warrior',  desc:'Complete 5 worksheets'},
-  {id:'course_champ', icon:'🏆', name:'Course Champion',    desc:'Complete all 8 worksheets'},
-  {id:'on_a_roll',    icon:'🔥', name:'On a Roll',          desc:'Complete 5 topics in one session'},
-  {id:'top_class',    icon:'🌟', name:'Top of the Class',   desc:'Reach Captain rank (1000 XP)'},
+  {id:'first_launch',icon:'🚀',name:'First Launch',       desc:'Complete your first topic'},
+  {id:'w1_clear',    icon:'📐',name:'Week 1 Clear',        desc:'Complete all Week 1 topics'},
+  {id:'w2_clear',    icon:'⚖️',name:'Week 2 Clear',        desc:'Complete all Week 2 topics'},
+  {id:'w3_clear',    icon:'ƒ', name:'Week 3 Clear',        desc:'Complete all Week 3 topics'},
+  {id:'w4_clear',    icon:'📈',name:'Week 4 Clear',        desc:'Complete all Week 4 topics'},
+  {id:'w5_clear',    icon:'🔄',name:'Week 5 Clear',        desc:'Complete all Week 5 topics'},
+  {id:'w6_clear',    icon:'xⁿ',name:'Week 6 Clear',        desc:'Complete all Week 6 topics'},
+  {id:'w7_clear',    icon:'🔺',name:'Week 7 Clear',        desc:'Complete all Week 7 topics'},
+  {id:'w8_clear',    icon:'📊',name:'Week 8 Clear',        desc:'Complete all Week 8 topics'},
+  {id:'halfway',     icon:'💫',name:'Halfway There',       desc:'Complete 4 full weeks'},
+  {id:'all_weeks',   icon:'🌌',name:'Mission Complete',    desc:'Complete all 8 weeks'},
+  {id:'ws_warrior',  icon:'📋',name:'Worksheet Warrior',   desc:'Complete 5 worksheets'},
+  {id:'course_champ',icon:'🏆',name:'Course Champion',     desc:'Complete all 8 worksheets'},
+  {id:'on_a_roll',   icon:'🔥',name:'On a Roll',           desc:'Complete 5 topics in one session'},
+  {id:'top_class',   icon:'🌟',name:'Top of the Class',    desc:'Reach Captain rank (1000 XP)'},
 ];
 
 const FUN_FACTS = {
-  1:{title:'Real Numbers & Architecture', week:'Week 1',
-     body:'Architects use irrational numbers constantly — the √2 ratio appears in the diagonal of every perfectly square room. The Parthenon's proportions use the golden ratio φ (an irrational number), and GPS coordinates are computed using transcendental numbers like π. Every real building runs on real numbers.'},
-  2:{title:'Equations & Rocket Science', week:'Week 2',
-     body:'SpaceX engineers solve literal equations every launch. The Tsiolkovsky rocket equation Δv = v_e × ln(m₀/m_f) must be rearranged to solve for fuel mass m_f before every mission. The same skill — isolating a variable — literally puts satellites in orbit.'},
-  3:{title:'Functions & Netflix Recommendations', week:'Week 3',
-     body:'Netflix's recommendation algorithm is a function: your viewing history (input) maps to a predicted rating (output). Each function must pass the "vertical line test" — every user gets exactly one recommended score per movie. Functions with 250 million inputs process in milliseconds.'},
-  4:{title:'Linear Equations & Economic Forecasting', week:'Week 4',
-     body:'The Federal Reserve uses linear regression (lines of best fit through data points) to predict inflation and set interest rates. The slope of the GDP-vs-time line IS the growth rate. When economists say "the economy grew 2.3%," they're reporting a slope.'},
-  5:{title:'Systems of Equations & GPS', week:'Week 5',
-     body:'Your phone solves a system of equations every second to find your location. It receives signals from 4+ satellites, each giving one equation. The intersection of those equations (the solution to the system) is exactly where you are — accurate to 3 meters.'},
-  6:{title:'Polynomials & Video Game Graphics', week:'Week 6',
-     body:'Every smooth curve in a video game — character faces, car bodies, terrain — is a Bézier curve, a polynomial equation. Pixar renders each frame of a movie using millions of polynomial calculations. Without polynomials, every game character would look like a blocky Minecraft figure.'},
-  7:{title:'Quadratics & Projectile Motion', week:'Week 7',
-     body:'Angry Birds is literally a quadratic equation simulator. The path of every thrown object follows h = -16t² + v₀t + h₀ — a quadratic you can now solve. Engineers use this for cannon trajectories, basketball shot angles, and calculating where a baseball will land.'},
-  8:{title:'Statistics & Sports Analytics', week:'Week 8',
-     body:'When ESPN shows a pitcher's "ERA" or a basketball player's "true shooting percentage," that's your statistics vocabulary in action. Teams like the Houston Astros and Golden State Warriors use scatter plots, regression lines, and outlier detection to decide which players to sign — the same tools from your Week 8 worksheets.'},
+  1:{title:'Real Numbers & Architecture',week:'Week 1',body:'Architects use irrational numbers constantly — the √2 ratio appears in the diagonal of every square room. The Parthenon uses the golden ratio φ, and GPS uses transcendental numbers like π. Every real building runs on real numbers.'},
+  2:{title:'Equations & Rocket Science',week:'Week 2',body:'SpaceX engineers solve literal equations every launch. The Tsiolkovsky rocket equation must be rearranged to solve for fuel mass before every mission — the same skill that puts satellites in orbit.'},
+  3:{title:'Functions & Netflix Recommendations',week:'Week 3',body:'Netflix\'s recommendation algorithm is a function: your viewing history maps to a predicted rating. Each movie gets exactly one score per user — passing the vertical line test with 250 million inputs.'},
+  4:{title:'Linear Equations & Economic Forecasting',week:'Week 4',body:'The Federal Reserve uses linear regression to predict inflation and set interest rates. When economists say "the economy grew 2.3%," they\'re reporting a slope.'},
+  5:{title:'Systems of Equations & GPS',week:'Week 5',body:'Your phone solves a system of equations every second to find your location — signals from 4+ satellites, each giving one equation. The intersection is exactly where you are, accurate to 3 meters.'},
+  6:{title:'Polynomials & Video Game Graphics',week:'Week 6',body:'Every smooth curve in a video game — character faces, terrain, car bodies — is a polynomial equation. Pixar renders each frame using millions of polynomial calculations.'},
+  7:{title:'Quadratics & Projectile Motion',week:'Week 7',body:'Angry Birds is literally a quadratic equation simulator. The path of every thrown object follows h = -16t² + v₀t + h₀ — a quadratic you can now solve. Same math used for basketball shots and rocket trajectories.'},
+  8:{title:'Statistics & Sports Analytics',week:'Week 8',body:'Teams like the Golden State Warriors use scatter plots, regression lines, and outlier detection to decide which players to sign — the exact tools from your Week 8 worksheets.'},
 };
 
-// ───────── State ─────────
-let STATE = {
-  xp: 0,
-  completed: [],   // array of topic IDs (serializable)
-  badges: [],      // array of badge IDs
-  sessionCount: 0, // topics completed this session (for on-a-roll)
-  weekBonuses: [], // weeks that received bonus XP
-  ledger: [], // [{id, label, amount, type}]
-};
-
-
-// ───────── Monetary Rewards ─────────
 const TOPIC_LABELS = {
   't1-1':'1.1 Real Number System','t1-2':'1.2 Properties','t1-3':'1.3 PEMDAS','t1-4':'1.4 Absolute Value',
   't2-1':'2.1 Linear Equations','t2-2':'2.2 Literal Equations','t2-3':'2.3 Inequalities','t2-4':'2.4 Compound & Abs',
@@ -1934,432 +2037,523 @@ const TOPIC_LABELS = {
   'ws5':'Week 5 Worksheet','ws6':'Week 6 Worksheet','ws7':'Week 7 Worksheet','ws8':'Week 8 Worksheet',
 };
 
-function getMoneyBalance(){
-  return (STATE.ledger||[]).reduce((sum,e)=>sum+e.amount,0);
-}
+// ────────────────────── State ──────────────────────
+let CURRENT_STUDENT = null;  // student config object
 
-function addLedgerEntry(id, label, amount, type){
-  if(!STATE.ledger) STATE.ledger=[];
-  STATE.ledger.push({id, label, amount, type, ts: new Date().toLocaleDateString()});
-}
+function stateKey(sid){ return 'math9_v4_' + sid; }
 
-function removeLedgerEntry(id){
-  if(!STATE.ledger) return;
-  STATE.ledger = STATE.ledger.filter(e=>e.id!==id);
-}
-
-function showDepositNotif(msg){
-  const el = document.getElementById('deposit-notif');
-  if(!el) return;
-  el.textContent = msg;
-  el.classList.add('show');
-  setTimeout(()=>el.classList.remove('show'), 2500);
-}
-
-function updateMoneyUI(){
-  const bal = getMoneyBalance();
-  const topicDone = (STATE.completed||[]).filter(t=>!t.startsWith('ws')).length;
-  const balFmt = '$'+bal.toLocaleString();
-  const b1 = document.getElementById('money-balance');
-  if(b1) b1.textContent = balFmt;
-  const dv = document.getElementById('dash-money-val');
-  if(dv) dv.textContent = balFmt;
-  const ds = document.getElementById('dash-money-sub');
-  if(ds) ds.textContent = topicDone + ' topics × $100 + bonuses = ' + balFmt;
-}
-
-function openLedger(){
-  const tbody = document.getElementById('ledger-tbody');
-  if(!tbody) return;
-  const entries = STATE.ledger || [];
-  if(entries.length === 0){
-    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:#475569;padding:20px;">No entries yet. Start completing topics!</td></tr>';
-  } else {
-    let running = 0;
-    tbody.innerHTML = entries.map((e,i)=>{
-      running += e.amount;
-      return `<tr>
-        <td style="color:#64748b;">${i+1}</td>
-        <td>${e.label}${e.ts?' <span style="font-size:10px;color:#475569;">'+e.ts+'</span>':''}</td>
-        <td class="amt">$${e.amount}</td>
-        <td class="bal">$${running.toLocaleString()}</td>
-      </tr>`;
-    }).join('');
-  }
-  const total = getMoneyBalance();
-  const tv = document.getElementById('ledger-total-val');
-  if(tv) tv.textContent = '$'+total.toLocaleString();
-  document.getElementById('ledger-modal').classList.add('open');
-}
-
-function printLedger(){
-  const entries = STATE.ledger || [];
-  const total = getMoneyBalance();
-  let running = 0;
-  const rows = entries.map((e,i)=>{
-    running += e.amount;
-    return `<tr><td>${i+1}</td><td>${e.label}</td><td>$${e.amount}</td><td>$${running}</td></tr>`;
-  }).join('');
-  const win = window.open('','_blank');
-  win.document.write(``);
-  win.print();
-}
-
-function loadState(){
+function loadState(sid){
   try {
-    const saved = localStorage.getItem('math9_v3');
-    if(saved){ const d=JSON.parse(saved); Object.assign(STATE,d); }
+    const saved = localStorage.getItem(stateKey(sid));
+    if(saved) return JSON.parse(saved);
   } catch(e){}
+  return {xp:0, completed:[], badges:[], sessionCount:0, weekBonuses:[], ledger:[]};
 }
+
 function saveState(){
-  try { localStorage.setItem('math9_v3', JSON.stringify(STATE)); } catch(e){}
+  if(!CURRENT_STUDENT) return;
+  try { localStorage.setItem(stateKey(CURRENT_STUDENT.id), JSON.stringify(STATE)); } catch(e){}
 }
+
+let STATE = {xp:0, completed:[], badges:[], sessionCount:0, weekBonuses:[], ledger:[]};
 
 function completedSet(){ return new Set(STATE.completed); }
 
-// ───────── Core: Mark Complete ─────────
+// ────────────────────── LOGIN ──────────────────────
+function buildLoginCards(){
+  const container = document.getElementById('login-cards');
+  if(!container) return;
+  container.innerHTML = STUDENTS_CFG.map(s => {
+    const st = loadState(s.id);
+    const rank = getRank(st.xp);
+    const pct  = rank.next === Infinity ? 100 : Math.min(100,(st.xp - rank.min)/(rank.next - rank.min)*100);
+    const topicsDone = (st.completed||[]).filter(t=>!t.startsWith('ws')).length;
+    return `<div class="login-card" style="--c:${s.color}" onclick="loginAs('${s.id}')">
+      <div class="login-avatar">${s.avatar}</div>
+      <div class="login-name" style="color:${s.color}">${s.name}</div>
+      <div class="login-stats">${rank.icon} ${rank.name} &nbsp;·&nbsp; ${st.xp} XP</div>
+      <div class="login-xp-bar"><div class="login-xp-fill" style="width:${pct}%;background:${s.color}"></div></div>
+      <div class="login-rank" style="color:${s.color}">${topicsDone} / ${TOPIC_ONLY.length} topics done</div>
+    </div>`;
+  }).join('');
+}
+
+function loginAs(sid){
+  const cfg = STUDENTS_CFG.find(s=>s.id===sid);
+  if(!cfg) return;
+  CURRENT_STUDENT = cfg;
+  STATE = loadState(sid);
+  STATE.sessionCount = 0;  // reset session streak on login
+
+  // Apply student color to sidebar header
+  const sidebarHeader = document.getElementById('sidebar-header');
+  if(sidebarHeader) sidebarHeader.style.background = `linear-gradient(135deg, ${cfg.color}33, #0f172a)`;
+
+  // Update switch button
+  const av = document.getElementById('current-user-avatar');
+  const nm = document.getElementById('current-user-name');
+  if(av) av.textContent = cfg.avatar;
+  if(nm) nm.textContent = cfg.name;
+
+  // Hide login screen
+  const ls = document.getElementById('login-screen');
+  ls.classList.add('hidden');
+  setTimeout(()=>{ls.style.display='none'; showHome();}, 400);
+
+  updateAllUI();
+  updateMoneyUI();
+}
+
+function goToLogin(){
+  saveState();
+  CURRENT_STUDENT = null;
+  const ls = document.getElementById('login-screen');
+  ls.style.display='flex';
+  ls.style.opacity='0';
+  setTimeout(()=>{ls.style.opacity='1'; ls.classList.remove('hidden'); buildLoginCards();}, 10);
+  // hide main content
+  document.getElementById('home').style.display='none';
+  document.querySelectorAll('.week-section').forEach(s=>s.classList.remove('active'));
+}
+
+// ────────────────────── PARENT DASHBOARD ──────────────────────
+function openParentDashboard(){
+  const ps = document.getElementById('parent-screen');
+  if(!ps) return;
+  ps.classList.add('open');
+  renderParentDashboard();
+}
+function closeParentDashboard(){
+  document.getElementById('parent-screen').classList.remove('open');
+}
+
+function renderParentDashboard(){
+  const grid = document.getElementById('parent-grid');
+  const vs   = document.getElementById('vs-content');
+  if(!grid) return;
+
+  const snapshots = STUDENTS_CFG.map(s=>({cfg:s, state: loadState(s.id)}));
+
+  grid.innerHTML = snapshots.map(({cfg, state:st})=>{
+    const rank  = getRank(st.xp);
+    const nextR = RANKS.find(r=>r.min>st.xp);
+    const pct   = nextR ? Math.min(100,(st.xp-rank.min)/(nextR.min-rank.min)*100) : 100;
+    const done  = new Set(st.completed||[]);
+    const topicsDone = TOPIC_ONLY.filter(t=>done.has(t)).length;
+    const weeksDone  = Object.entries(WEEK_TOPICS).filter(([,ts])=>ts.every(t=>done.has(t))).length;
+    const money = (st.ledger||[]).reduce((s,e)=>s+e.amount,0);
+    const badgesEarned = (st.badges||[]).map(bid=>BADGES.find(b=>b.id===bid)).filter(Boolean);
+
+    const weekBars = Object.entries(WEEK_TOPICS).map(([w,topics])=>{
+      const cnt = topics.filter(t=>done.has(t)).length;
+      const p   = Math.round(cnt/topics.length*100);
+      return `<div class="parent-week-row">
+        <div class="parent-week-name">Week ${w}: ${WEEK_NAMES[w]}</div>
+        <div class="parent-week-bar"><div class="parent-week-fill" style="width:${p}%;background:${cfg.color}"></div></div>
+        <div class="parent-week-pct">${p}%</div>
+      </div>`;
+    }).join('');
+
+    const badgePills = badgesEarned.length > 0
+      ? badgesEarned.map(b=>`<span class="parent-badge-pill">${b.icon} ${b.name}</span>`).join('')
+      : '<span style="font-size:12px;color:#475569">No badges yet</span>';
+
+    return `<div class="parent-card" style="border-color:${cfg.color}44;">
+      <div class="parent-card-header">
+        <div class="parent-card-avatar">${cfg.avatar}</div>
+        <div>
+          <div class="parent-card-name" style="color:${cfg.color}">${cfg.name}</div>
+          <div class="parent-card-rank" style="color:${cfg.color}">${rank.icon} ${rank.name}</div>
+        </div>
+      </div>
+      <div class="parent-stat-row">
+        <div class="parent-stat"><div class="parent-stat-val" style="color:${cfg.color}">${st.xp}</div><div class="parent-stat-lbl">Total XP</div></div>
+        <div class="parent-stat"><div class="parent-stat-val" style="color:${cfg.color}">${topicsDone}/${TOPIC_ONLY.length}</div><div class="parent-stat-lbl">Topics</div></div>
+        <div class="parent-stat"><div class="parent-stat-val" style="color:${cfg.color}">${weeksDone}/8</div><div class="parent-stat-lbl">Weeks</div></div>
+        <div class="parent-stat"><div class="parent-stat-val" style="color:${cfg.color}">${(st.badges||[]).length}</div><div class="parent-stat-lbl">Badges</div></div>
+      </div>
+      <div class="parent-xp-track"><div class="parent-xp-fill" style="width:${pct}%;background:${cfg.color}"></div></div>
+      <div style="font-size:11px;color:#475569;text-align:right;margin-bottom:10px;">${nextR ? st.xp+' / '+nextR.min+' XP to '+nextR.name : 'MAX RANK 🌌'}</div>
+      <div class="parent-section-title">Week Progress</div>
+      ${weekBars}
+      <div class="parent-money">
+        <div>
+          <div class="parent-money-lbl">💰 Reward Balance</div>
+          <div class="parent-money-val">$${money.toLocaleString()}</div>
+        </div>
+        <div style="font-size:11px;color:#166534;">${(st.completed||[]).length} completions</div>
+      </div>
+      <div class="parent-section-title">Mission Patches</div>
+      <div class="parent-badges-row">${badgePills}</div>
+    </div>`;
+  }).join('');
+
+  // Head-to-head
+  if(vs){
+    const [A, B] = snapshots;
+    const domA = new Set(A.state.completed||[]);
+    const domB = new Set(B.state.completed||[]);
+    const monA = (A.state.ledger||[]).reduce((s,e)=>s+e.amount,0);
+    const monB = (B.state.ledger||[]).reduce((s,e)=>s+e.amount,0);
+    const topA = TOPIC_ONLY.filter(t=>domA.has(t)).length;
+    const topB = TOPIC_ONLY.filter(t=>domB.has(t)).length;
+    const wksA = Object.values(WEEK_TOPICS).filter(ts=>ts.every(t=>domA.has(t))).length;
+    const wksB = Object.values(WEEK_TOPICS).filter(ts=>ts.every(t=>domB.has(t))).length;
+    const maxXp = Math.max(A.state.xp, B.state.xp, 1);
+    const maxTop= Math.max(topA, topB, 1);
+    const maxMon= Math.max(monA, monB, 1);
+
+    function vsRow(label, valA, valB, maxV, colorA, colorB, fmt=(v)=>v){
+      const pA = Math.round(valA/maxV*100), pB = Math.round(valB/maxV*100);
+      return `<div class="vs-row">
+        <div class="vs-label">${label}</div>
+        <div class="vs-bar-wrap">
+          <div class="vs-bar" style="width:${pA}%;background:${colorA};"></div>
+          <div class="vs-val" style="color:${colorA}">${fmt(valA)}</div>
+        </div>
+        <div class="vs-bar-wrap" style="flex-direction:row-reverse;">
+          <div class="vs-bar" style="width:${pB}%;background:${colorB};"></div>
+          <div class="vs-val" style="color:${colorB};text-align:left;">${fmt(valB)}</div>
+        </div>
+      </div>`;
+    }
+
+    vs.innerHTML = `
+      <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:14px;">
+        <span style="color:${A.cfg.color}">${A.cfg.avatar} ${A.cfg.name}</span>
+        <span style="color:#475569">vs</span>
+        <span style="color:${B.cfg.color}">${B.cfg.name} ${B.cfg.avatar}</span>
+      </div>
+      ${vsRow('XP',      A.state.xp, B.state.xp, maxXp, A.cfg.color, B.cfg.color)}
+      ${vsRow('Topics',  topA, topB, maxTop, A.cfg.color, B.cfg.color)}
+      ${vsRow('Weeks',   wksA, wksB, 8, A.cfg.color, B.cfg.color)}
+      ${vsRow('Badges',  (A.state.badges||[]).length, (B.state.badges||[]).length, Math.max((A.state.badges||[]).length,(B.state.badges||[]).length,1), A.cfg.color, B.cfg.color)}
+      ${vsRow('Earned',  monA, monB, maxMon, A.cfg.color, B.cfg.color, v=>'$'+v.toLocaleString())}
+    `;
+  }
+}
+
+// ────────────────────── COMPLETE TOPIC ──────────────────────
 function completeTopic(id, event){
-  if(event){ event.stopPropagation(); event.preventDefault(); }
+  if(!CURRENT_STUDENT){ alert('Please log in first!'); return; }
+  if(event){event.stopPropagation();event.preventDefault();}
   const done = completedSet();
+
   if(done.has(id)){
-    // Undo
     const xpLost = id.startsWith('ws') ? 50 : 25;
     STATE.completed = STATE.completed.filter(x=>x!==id);
     STATE.xp = Math.max(0, STATE.xp - xpLost);
-    // Remove money entry
     removeLedgerEntry(id);
-    // Remove week bonus money entry
     const week0 = getWeekForTopic(id);
     if(week0 && STATE.weekBonuses.includes(week0)){
       STATE.weekBonuses = STATE.weekBonuses.filter(w=>w!==week0);
       STATE.xp = Math.max(0, STATE.xp - 75);
       removeLedgerEntry('wk_bonus_'+week0);
     }
-    updateAllUI();
-    updateMoneyUI();
-    saveState();
-    return;
+    updateAllUI(); updateMoneyUI(); saveState(); return;
   }
-  // Mark complete
+
   const xp = id.startsWith('ws') ? 50 : 25;
+  const moneyAmt = id.startsWith('ws') ? 150 : 100;
   STATE.completed.push(id);
   STATE.xp += xp;
   STATE.sessionCount++;
-  // Money reward
-  const moneyAmt = id.startsWith('ws') ? 150 : 100;
-  const topicLabel = TOPIC_LABELS[id] || id;
-  addLedgerEntry(id, topicLabel, moneyAmt, id.startsWith('ws')?'worksheet':'topic');
+  addLedgerEntry(id, TOPIC_LABELS[id]||id, moneyAmt, id.startsWith('ws')?'worksheet':'topic');
   setTimeout(()=>showDepositNotif('💰 $'+moneyAmt+' Deposited!'), 300);
-  showXPGain('+' + xp + ' XP ⚡');
+  showXPGain('+'+xp+' XP ⚡');
   checkWeekBonus(id);
   checkBadges();
-  updateAllUI();
-  updateMoneyUI();
-  saveState();
+  updateAllUI(); updateMoneyUI(); saveState();
 }
 
 function getWeekForTopic(id){
-  for(const [w, topics] of Object.entries(WEEK_TOPICS)){
+  for(const [w,topics] of Object.entries(WEEK_TOPICS)){
     if(topics.includes(id)) return parseInt(w);
   }
   return null;
 }
 
-function checkWeekBonus(justCompleted){
-  const week = getWeekForTopic(justCompleted);
+function checkWeekBonus(id){
+  const week = getWeekForTopic(id);
   if(!week || STATE.weekBonuses.includes(week)) return;
   const done = completedSet();
-  const allDone = WEEK_TOPICS[week].every(t=>done.has(t));
-  if(allDone){
+  if(WEEK_TOPICS[week].every(t=>done.has(t))){
     STATE.weekBonuses.push(week);
     STATE.xp += 75;
-    addLedgerEntry('wk_bonus_'+week, 'Week '+week+' Completion Bonus', 50, 'bonus');
-    setTimeout(()=>{
-      showXPGain('+75 XP 🌟 Week ' + week + ' Bonus!');
-      showDepositNotif('🎉 $50 Week Bonus Deposited!');
-      launchConfetti();
-    }, 600);
+    addLedgerEntry('wk_bonus_'+week,'Week '+week+' Completion Bonus',50,'bonus');
+    setTimeout(()=>{ showXPGain('+75 XP 🌟 Week '+week+' Bonus!'); showDepositNotif('🎉 $50 Week Bonus Deposited!'); launchConfetti(); }, 600);
   }
 }
 
-// ───────── Badges ─────────
+// ────────────────────── BADGES ──────────────────────
 function checkBadges(){
   const done = completedSet();
-  const weeksComplete = Object.entries(WEEK_TOPICS)
-    .filter(([w, topics]) => topics.every(t=>done.has(t)))
-    .map(([w])=>parseInt(w));
-  const wsComplete = ALL_TOPICS.filter(t=>t.startsWith('ws') && done.has(t)).length;
-
+  const weeksComplete = Object.entries(WEEK_TOPICS).filter(([,ts])=>ts.every(t=>done.has(t))).map(([w])=>parseInt(w));
+  const wsComplete = ALL_TOPICS.filter(t=>t.startsWith('ws')&&done.has(t)).length;
   const checks = {
-    first_launch: ()=> STATE.completed.length >= 1,
-    w1_clear:     ()=> WEEK_TOPICS[1].every(t=>done.has(t)),
-    w2_clear:     ()=> WEEK_TOPICS[2].every(t=>done.has(t)),
-    w3_clear:     ()=> WEEK_TOPICS[3].every(t=>done.has(t)),
-    w4_clear:     ()=> WEEK_TOPICS[4].every(t=>done.has(t)),
-    w5_clear:     ()=> WEEK_TOPICS[5].every(t=>done.has(t)),
-    w6_clear:     ()=> WEEK_TOPICS[6].every(t=>done.has(t)),
-    w7_clear:     ()=> WEEK_TOPICS[7].every(t=>done.has(t)),
-    w8_clear:     ()=> WEEK_TOPICS[8].every(t=>done.has(t)),
-    halfway:      ()=> weeksComplete.length >= 4,
-    all_weeks:    ()=> weeksComplete.length >= 8,
-    ws_warrior:   ()=> wsComplete >= 5,
-    course_champ: ()=> wsComplete >= 8,
-    on_a_roll:    ()=> STATE.sessionCount >= 5,
-    top_class:    ()=> STATE.xp >= 1000,
+    first_launch:()=>STATE.completed.length>=1,
+    w1_clear:()=>WEEK_TOPICS[1].every(t=>done.has(t)),
+    w2_clear:()=>WEEK_TOPICS[2].every(t=>done.has(t)),
+    w3_clear:()=>WEEK_TOPICS[3].every(t=>done.has(t)),
+    w4_clear:()=>WEEK_TOPICS[4].every(t=>done.has(t)),
+    w5_clear:()=>WEEK_TOPICS[5].every(t=>done.has(t)),
+    w6_clear:()=>WEEK_TOPICS[6].every(t=>done.has(t)),
+    w7_clear:()=>WEEK_TOPICS[7].every(t=>done.has(t)),
+    w8_clear:()=>WEEK_TOPICS[8].every(t=>done.has(t)),
+    halfway:()=>weeksComplete.length>=4,
+    all_weeks:()=>weeksComplete.length>=8,
+    ws_warrior:()=>wsComplete>=5,
+    course_champ:()=>wsComplete>=8,
+    on_a_roll:()=>STATE.sessionCount>=5,
+    top_class:()=>STATE.xp>=1000,
   };
   const badgeSet = new Set(STATE.badges);
-  for(const [id, check] of Object.entries(checks)){
-    if(!badgeSet.has(id) && check()){
-      STATE.badges.push(id);
-      badgeSet.add(id);
-      const badge = BADGES.find(b=>b.id===id);
-      if(badge) setTimeout(()=>showAchievement(badge), 800);
+  for(const [id,check] of Object.entries(checks)){
+    if(!badgeSet.has(id)&&check()){
+      STATE.badges.push(id); badgeSet.add(id);
+      const badge=BADGES.find(b=>b.id===id);
+      if(badge) setTimeout(()=>showAchievement(badge),800);
     }
   }
 }
 
-// ───────── Rank ─────────
-function getRank(xp){
-  for(let i=RANKS.length-1;i>=0;i--){
-    if(xp >= RANKS[i].min) return RANKS[i];
-  }
-  return RANKS[0];
-}
+// ────────────────────── RANK ──────────────────────
+function getRank(xp){ for(let i=RANKS.length-1;i>=0;i--){if(xp>=RANKS[i].min)return RANKS[i];}return RANKS[0];}
 
-// ───────── UI Updates ─────────
+// ────────────────────── UI UPDATES ──────────────────────
 function updateAllUI(){
+  if(!CURRENT_STUDENT) return;
   const done = completedSet();
   const rank = getRank(STATE.xp);
-  const nextRank = RANKS.find(r=>r.min > STATE.xp);
-  const pct = nextRank ? Math.min(100, (STATE.xp - rank.min)/(nextRank.min - rank.min)*100) : 100;
+  const nextRank = RANKS.find(r=>r.min>STATE.xp);
+  const pct = nextRank ? Math.min(100,(STATE.xp-rank.min)/(nextRank.min-rank.min)*100) : 100;
 
-  // Sidebar panel
-  const gpRank = document.getElementById('gp-rank-text');
-  if(gpRank) gpRank.textContent = rank.icon + ' ' + rank.name;
-  const gpXpNum = document.getElementById('gp-xp-num');
-  if(gpXpNum) gpXpNum.textContent = STATE.xp + ' XP';
-  const gpFill = document.getElementById('gp-xp-fill');
-  if(gpFill) gpFill.style.width = pct + '%';
-  const gpLabel = document.getElementById('gp-xp-label');
-  if(gpLabel) gpLabel.textContent = nextRank ? STATE.xp + ' / ' + nextRank.min + ' XP to ' + nextRank.name : 'MAX RANK 🌌';
+  const el = t=>document.getElementById(t);
+  if(el('gp-rank-text')) el('gp-rank-text').textContent = rank.icon+' '+rank.name;
+  if(el('gp-xp-num')) el('gp-xp-num').textContent = STATE.xp+' XP';
+  if(el('gp-xp-fill')) el('gp-xp-fill').style.width = pct+'%';
+  if(el('gp-xp-label')) el('gp-xp-label').textContent = nextRank ? STATE.xp+' / '+nextRank.min+' XP to '+nextRank.name : 'MAX RANK 🌌';
+
   const topicsDone = TOPIC_ONLY.filter(t=>done.has(t)).length;
-  const weeksDone = Object.entries(WEEK_TOPICS).filter(([w,ts])=>ts.every(t=>done.has(t))).length;
-  const el=t=>document.getElementById(t);
+  const weeksDone  = Object.entries(WEEK_TOPICS).filter(([,ts])=>ts.every(t=>done.has(t))).length;
   if(el('gp-topics-done')) el('gp-topics-done').textContent = topicsDone;
-  if(el('gp-weeks-done')) el('gp-weeks-done').textContent = weeksDone;
+  if(el('gp-weeks-done'))  el('gp-weeks-done').textContent  = weeksDone;
   if(el('gp-badges-done')) el('gp-badges-done').textContent = STATE.badges.length;
   if(el('gp-badge-count')) el('gp-badge-count').textContent = STATE.badges.length;
 
-  // Dashboard
   if(el('dash-rank-icon')) el('dash-rank-icon').textContent = rank.icon;
   if(el('dash-rank-name')) el('dash-rank-name').textContent = rank.name;
-  if(el('dash-rank-sub')) el('dash-rank-sub').textContent = nextRank ? (nextRank.min - STATE.xp) + ' XP to reach ' + nextRank.name : 'Maximum rank achieved! 🌌';
-  if(el('dash-xp-fill')) el('dash-xp-fill').style.width = pct + '%';
-  if(el('dash-xp-text')) el('dash-xp-text').textContent = nextRank ? STATE.xp + ' / ' + nextRank.min + ' XP' : STATE.xp + ' XP — GALAXY BRAIN!';
-  if(el('dash-total-xp')) el('dash-total-xp').textContent = STATE.xp;
-  if(el('dash-topics')) el('dash-topics').textContent = topicsDone + '/' + TOPIC_ONLY.length;
-  if(el('dash-weeks')) el('dash-weeks').textContent = weeksDone + '/8';
+  if(el('dash-rank-sub'))  el('dash-rank-sub').textContent  = nextRank ? (nextRank.min-STATE.xp)+' XP to reach '+nextRank.name : 'Maximum rank achieved! 🌌';
+  if(el('dash-xp-fill'))   el('dash-xp-fill').style.width   = pct+'%';
+  if(el('dash-xp-text'))   el('dash-xp-text').textContent   = nextRank ? STATE.xp+' / '+nextRank.min+' XP' : STATE.xp+' XP — GALAXY BRAIN!';
+  if(el('dash-total-xp'))  el('dash-total-xp').textContent  = STATE.xp;
+  if(el('dash-topics'))    el('dash-topics').textContent     = topicsDone+'/'+TOPIC_ONLY.length;
+  if(el('dash-weeks'))     el('dash-weeks').textContent      = weeksDone+'/8';
   if(el('dash-badges-ct')) el('dash-badges-ct').textContent = STATE.badges.length;
+  if(el('cert-btn'))       el('cert-btn').style.display      = weeksDone>=8 ? '' : 'none';
 
-  // Show certificate button if all weeks complete
-  if(el('cert-btn')) el('cert-btn').style.display = weeksDone >= 8 ? '' : 'none';
+  // Tint XP bar to student color
+  if(el('gp-xp-fill')) el('gp-xp-fill').style.background = `linear-gradient(90deg,${CURRENT_STUDENT.color},${CURRENT_STUDENT.color}88)`;
+  if(el('dash-xp-fill')) el('dash-xp-fill').style.background = `linear-gradient(90deg,${CURRENT_STUDENT.color},${CURRENT_STUDENT.color}88)`;
 
   // Complete buttons
   ALL_TOPICS.forEach(id=>{
-    const btn = el('cb-'+id);
+    const btn=el('cb-'+id);
     if(!btn) return;
-    if(done.has(id)){
-      btn.classList.add('done');
-      btn.textContent = '✓ Done';
-    } else {
-      btn.classList.remove('done');
-      btn.textContent = '✓ Complete';
-    }
-    const card = el(id);
-    if(card){
-      if(done.has(id)) card.classList.add('topic-done');
-      else card.classList.remove('topic-done');
-    }
+    if(done.has(id)){ btn.classList.add('done'); btn.textContent='✓ Done';
+    } else { btn.classList.remove('done'); btn.textContent='✓ Complete'; }
+    const card=el(id);
+    if(card){ if(done.has(id)) card.classList.add('topic-done'); else card.classList.remove('topic-done'); }
   });
 
-  // Week progress bars in overview
+  // Week progress bars
   for(let w=1;w<=8;w++){
-    const topics = WEEK_TOPICS[w];
-    const cnt = topics.filter(t=>done.has(t)).length;
-    const fill = el('wpf-'+w);
-    const txt = el('wpt-'+w);
-    if(fill) fill.style.width = (cnt/topics.length*100)+'%';
-    if(txt) txt.textContent = cnt + ' / ' + topics.length + (cnt===topics.length?' ✓':'');
+    const topics=WEEK_TOPICS[w], cnt=topics.filter(t=>done.has(t)).length;
+    const fill=el('wpf-'+w), txt=el('wpt-'+w);
+    if(fill) fill.style.width=(cnt/topics.length*100)+'%';
+    if(txt)  txt.textContent=cnt+' / '+topics.length+(cnt===topics.length?' ✓':'');
+    if(fill&&CURRENT_STUDENT) fill.style.background=CURRENT_STUDENT.color;
   }
 
-  // Nav week progress badges
+  // Nav week progress
   for(let w=1;w<=8;w++){
-    const btn = document.querySelector('#nav-w'+w+' .nav-week-btn');
+    const btn=document.querySelector('#nav-w'+w+' .nav-week-btn');
     if(!btn) continue;
-    let prog = btn.querySelector('.nav-week-prog');
-    if(!prog){ prog=document.createElement('span'); prog.className='nav-week-prog'; btn.appendChild(prog); }
-    const topics = WEEK_TOPICS[w];
-    const cnt = topics.filter(t=>done.has(t)).length;
-    prog.textContent = cnt===topics.length ? '✓' : cnt+'/'+topics.length;
-    prog.classList.toggle('done', cnt===topics.length);
+    let prog=btn.querySelector('.nav-week-prog');
+    if(!prog){prog=document.createElement('span');prog.className='nav-week-prog';btn.appendChild(prog);}
+    const topics=WEEK_TOPICS[w], cnt=topics.filter(t=>done.has(t)).length;
+    prog.textContent=cnt===topics.length?'✓':cnt+'/'+topics.length;
+    prog.classList.toggle('done',cnt===topics.length);
   }
 
-  // Fun facts
   renderFunFacts();
-  updateMoneyUI();
 }
 
-// ───────── XP Notification ─────────
-let xpTimer = null;
+// ────────────────────── MONEY ──────────────────────
+function getMoneyBalance(){ return (STATE.ledger||[]).reduce((s,e)=>s+e.amount,0); }
+function addLedgerEntry(id,label,amount,type){
+  if(!STATE.ledger) STATE.ledger=[];
+  STATE.ledger.push({id,label,amount,type,ts:new Date().toLocaleDateString()});
+}
+function removeLedgerEntry(id){
+  if(!STATE.ledger) return;
+  STATE.ledger=STATE.ledger.filter(e=>e.id!==id);
+}
+function updateMoneyUI(){
+  if(!CURRENT_STUDENT) return;
+  const bal = getMoneyBalance();
+  const topicDone=(STATE.completed||[]).filter(t=>!t.startsWith('ws')).length;
+  const fmt='$'+bal.toLocaleString();
+  const el=t=>document.getElementById(t);
+  if(el('money-balance')) el('money-balance').textContent=fmt;
+  if(el('dash-money-val')) el('dash-money-val').textContent=fmt;
+  if(el('dash-money-sub')) el('dash-money-sub').textContent=topicDone+' topics × $100 + bonuses = '+fmt;
+}
+
+function openLedger(){
+  const tbody=document.getElementById('ledger-tbody');
+  if(!tbody) return;
+  const entries=STATE.ledger||[];
+  if(!entries.length){
+    tbody.innerHTML='<tr><td colspan="4" style="text-align:center;color:#475569;padding:20px;">No entries yet.</td></tr>';
+  } else {
+    let running=0;
+    tbody.innerHTML=entries.map((e,i)=>{
+      running+=e.amount;
+      return `<tr><td style="color:#64748b;">${i+1}</td><td>${e.label}${e.ts?' <span style="font-size:10px;color:#475569;">'+e.ts+'</span>':''}</td><td class="amt">$${e.amount}</td><td class="bal">$${running.toLocaleString()}</td></tr>`;
+    }).join('');
+  }
+  const tv=document.getElementById('ledger-total-val');
+  if(tv) tv.textContent='$'+getMoneyBalance().toLocaleString();
+  document.getElementById('ledger-modal').classList.add('open');
+}
+
+function printLedger(){
+  const entries=STATE.ledger||[];
+  const total=getMoneyBalance();
+  let running=0;
+  const name=CURRENT_STUDENT?CURRENT_STUDENT.name:'Student';
+  const rows=entries.map((e,i)=>{running+=e.amount;return `<tr><td>${i+1}</td><td>${e.label}</td><td>$${e.amount}</td><td>$${running}</td></tr>`;}).join('');
+  const win=window.open('','_blank');
+  win.document.write(`<html><head><title>${name} Reward Ledger</title><style>body{font-family:Arial,sans-serif;padding:30px;}h1{color:#052e16;}table{width:100%;border-collapse:collapse;margin-top:16px;}th{background:#052e16;color:#4ade80;padding:8px;}td{padding:8px;border-bottom:1px solid #e2e8f0;}.total{font-size:18px;font-weight:bold;color:#052e16;margin-top:16px;}</style></head><body><h1>📒 ${name}'s Math Reward Ledger</h1><p>$100 per topic · $50 bonus per week completed.</p><table><thead><tr><th>#</th><th>Topic</th><th>Amount</th><th>Running Balance</th></tr></thead><tbody>${rows}</tbody></table><div class="total">Total Earned: $${total.toLocaleString()}</div></body></html>`);
+  win.print();
+}
+
+// ────────────────────── NOTIFICATIONS ──────────────────────
+let xpTimer=null;
 function showXPGain(msg){
-  const el = document.getElementById('xp-notif');
-  if(!el) return;
-  el.textContent = msg;
-  el.classList.add('show');
+  const el=document.getElementById('xp-notif'); if(!el) return;
+  el.textContent=msg; el.classList.add('show');
   if(xpTimer) clearTimeout(xpTimer);
-  xpTimer = setTimeout(()=>el.classList.remove('show'), 2000);
+  xpTimer=setTimeout(()=>el.classList.remove('show'),2000);
 }
 
-// ───────── Achievement Toast ─────────
-let achTimer = null;
+let depTimer=null;
+function showDepositNotif(msg){
+  const el=document.getElementById('deposit-notif'); if(!el) return;
+  el.textContent=msg; el.classList.add('show');
+  if(depTimer) clearTimeout(depTimer);
+  depTimer=setTimeout(()=>el.classList.remove('show'),2500);
+}
+
+let achTimer=null;
 function showAchievement(badge){
-  const toast = document.getElementById('achievement-toast');
-  if(!toast) return;
-  document.getElementById('ach-icon').textContent = badge.icon;
-  document.getElementById('ach-name').textContent = badge.name;
-  document.getElementById('ach-desc').textContent = badge.desc;
+  const toast=document.getElementById('achievement-toast'); if(!toast) return;
+  document.getElementById('ach-icon').textContent=badge.icon;
+  document.getElementById('ach-name').textContent=badge.name;
+  document.getElementById('ach-desc').textContent=badge.desc;
   toast.classList.add('show');
   if(achTimer) clearTimeout(achTimer);
-  achTimer = setTimeout(()=>toast.classList.remove('show'), 4000);
+  achTimer=setTimeout(()=>toast.classList.remove('show'),4000);
 }
 
-// ───────── Confetti ─────────
-let confettiParticles = [];
-let confettiAnim = null;
+// ────────────────────── CONFETTI ──────────────────────
+let confettiParticles=[], confettiAnim=null;
 function launchConfetti(){
-  const canvas = document.getElementById('confetti-canvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  const colors = ['#fbbf24','#2563eb','#7c3aed','#16a34a','#f97316','#ec4899','#06b6d4'];
-  confettiParticles = Array.from({length:120}, ()=>({
-    x: Math.random()*canvas.width,
-    y: -10,
-    r: 4+Math.random()*6,
-    d: 3+Math.random()*4,
-    color: colors[Math.floor(Math.random()*colors.length)],
-    tilt: Math.random()*10-5,
-    tiltAngle: 0,
-    tiltSpeed: Math.random()*.1+.05,
-    vx: Math.random()*4-2,
+  const canvas=document.getElementById('confetti-canvas'); if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  canvas.width=window.innerWidth; canvas.height=window.innerHeight;
+  const colors=['#fbbf24','#2563eb','#7c3aed','#16a34a','#f97316','#ec4899','#06b6d4'];
+  confettiParticles=Array.from({length:120},()=>({
+    x:Math.random()*canvas.width,y:-10,r:4+Math.random()*6,d:3+Math.random()*4,
+    color:colors[Math.floor(Math.random()*colors.length)],tilt:Math.random()*10-5,
+    tiltAngle:0,tiltSpeed:Math.random()*.1+.05,vx:Math.random()*4-2,
   }));
   if(confettiAnim) cancelAnimationFrame(confettiAnim);
-  let frame = 0;
+  let frame=0;
   function drawFrame(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     confettiParticles.forEach(p=>{
-      ctx.beginPath();
-      ctx.fillStyle=p.color;
-      p.tiltAngle += p.tiltSpeed;
-      p.y += p.d;
-      p.x += p.vx;
-      p.tilt = Math.sin(p.tiltAngle)*12;
-      ctx.ellipse(p.x+p.tilt/2, p.y, p.r, p.r/2, p.tiltAngle, 0, 2*Math.PI);
-      ctx.fill();
+      ctx.beginPath(); ctx.fillStyle=p.color; p.tiltAngle+=p.tiltSpeed;
+      p.y+=p.d; p.x+=p.vx; p.tilt=Math.sin(p.tiltAngle)*12;
+      ctx.ellipse(p.x+p.tilt/2,p.y,p.r,p.r/2,p.tiltAngle,0,2*Math.PI); ctx.fill();
     });
-    confettiParticles = confettiParticles.filter(p=>p.y<canvas.height+20);
+    confettiParticles=confettiParticles.filter(p=>p.y<canvas.height+20);
     frame++;
-    if(confettiParticles.length>0 && frame<300) confettiAnim=requestAnimationFrame(drawFrame);
+    if(confettiParticles.length>0&&frame<300) confettiAnim=requestAnimationFrame(drawFrame);
     else ctx.clearRect(0,0,canvas.width,canvas.height);
   }
-  confettiAnim = requestAnimationFrame(drawFrame);
+  confettiAnim=requestAnimationFrame(drawFrame);
 }
 
-// ───────── Badges Modal ─────────
+// ────────────────────── BADGES MODAL ──────────────────────
 function openBadges(){
-  const badgeSet = new Set(STATE.badges);
-  const grid = document.getElementById('badges-grid');
-  if(!grid) return;
-  grid.innerHTML = BADGES.map(b=>`
-    <div class="badge-card ${badgeSet.has(b.id)?'earned':'locked'}">
-      <div class="badge-icon">${b.icon}</div>
-      <div class="badge-name">${b.name}</div>
-      <div class="badge-desc">${badgeSet.has(b.id)?b.desc:'???'}</div>
-    </div>`).join('');
-  const sub = document.getElementById('badges-subtitle');
-  if(sub) sub.textContent = STATE.badges.length + ' of ' + BADGES.length + ' badges earned';
+  const badgeSet=new Set(STATE.badges);
+  const grid=document.getElementById('badges-grid'); if(!grid) return;
+  grid.innerHTML=BADGES.map(b=>`<div class="badge-card ${badgeSet.has(b.id)?'earned':'locked'}"><div class="badge-icon">${b.icon}</div><div class="badge-name">${b.name}</div><div class="badge-desc">${badgeSet.has(b.id)?b.desc:'???'}</div></div>`).join('');
+  const sub=document.getElementById('badges-subtitle');
+  if(sub) sub.textContent=STATE.badges.length+' of '+BADGES.length+' badges earned'+(CURRENT_STUDENT?' by '+CURRENT_STUDENT.name:'');
   document.getElementById('badges-modal').classList.add('open');
 }
 
-// ───────── Fun Facts ─────────
+// ────────────────────── FUN FACTS ──────────────────────
 function renderFunFacts(){
-  const grid = document.getElementById('fun-facts-grid');
-  if(!grid) return;
-  const done = completedSet();
-  let html = '';
+  const grid=document.getElementById('fun-facts-grid'); if(!grid) return;
+  const done=completedSet();
+  let h='';
   for(let w=1;w<=8;w++){
-    const unlocked = WEEK_TOPICS[w].every(t=>done.has(t));
-    const ff = FUN_FACTS[w];
-    html += `<div class="fun-fact-card ${unlocked?'unlocked':'locked-card'}">
-      <div class="ff-week">${ff.week}</div>
-      <div class="ff-title">${unlocked?'🔓 '+ff.title:'🔒 Locked'}</div>
-      <div class="ff-body">${unlocked?ff.body:'Complete all Week '+w+' topics to unlock this mission log.'}</div>
-    </div>`;
+    const unlocked=WEEK_TOPICS[w].every(t=>done.has(t));
+    const ff=FUN_FACTS[w];
+    h+=`<div class="fun-fact-card ${unlocked?'unlocked':'locked-card'}"><div class="ff-week">${ff.week}</div><div class="ff-title">${unlocked?'🔓 '+ff.title:'🔒 Locked'}</div><div class="ff-body">${unlocked?ff.body:'Complete all Week '+w+' topics to unlock.'}</div></div>`;
   }
-  grid.innerHTML = html;
+  grid.innerHTML=h;
 }
-
 function showFunFacts(){
   hideAll();
-  const el = document.getElementById('fun-facts-section');
+  const el=document.getElementById('fun-facts-section');
   if(el) el.classList.add('active');
   renderFunFacts();
   document.getElementById('main').scrollTop=0;
 }
 
-// ───────── Certificate ─────────
+// ────────────────────── CERTIFICATE ──────────────────────
 function openCertificate(){
-  const d = new Date();
-  const dateStr = d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
-  const dateEl = document.getElementById('cert-date');
-  if(dateEl) dateEl.textContent = 'Completed on ' + dateStr;
+  const d=new Date();
+  const dateEl=document.getElementById('cert-date');
+  if(dateEl) dateEl.textContent='Completed on '+d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
   document.getElementById('cert-modal').classList.add('open');
 }
 
-// ───────── Modal helpers ─────────
-function closeModal(id){
-  document.getElementById(id).classList.remove('open');
-}
-// Close modal on backdrop click
-document.addEventListener('click', e=>{
-  if(e.target.classList.contains('modal-overlay')) e.target.classList.remove('open');
-});
+// ────────────────────── MODAL HELPERS ──────────────────────
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.addEventListener('click',e=>{ if(e.target.classList.contains('modal-overlay')) e.target.classList.remove('open'); });
 
-// ───────── Navigation (original + progress update) ─────────
+// ────────────────────── NAVIGATION ──────────────────────
 function showHome(){
-  hideAll();
-  document.getElementById('home').style.display='block';
-  updateNav(null);
-  updateProgress(0);
-  document.getElementById('main').scrollTop=0;
+  hideAll(); document.getElementById('home').style.display='block';
+  updateNav(null); updateProgress(0); document.getElementById('main').scrollTop=0;
 }
 function showWeek(n){
   hideAll();
-  const el=document.getElementById('week'+n);
-  if(el){el.classList.add('active');}
-  updateNav(n);
-  updateProgress(n/8*100);
+  const el=document.getElementById('week'+n); if(el) el.classList.add('active');
+  updateNav(n); updateProgress(n/8*100);
   const firstTopic=el?el.querySelector('.topic-card'):null;
-  if(firstTopic&&!firstTopic.classList.contains('open')){firstTopic.classList.add('open');}
+  if(firstTopic&&!firstTopic.classList.contains('open')) firstTopic.classList.add('open');
   document.getElementById('main').scrollTop=0;
 }
 function showAppendix(id){
-  hideAll();
-  const el=document.getElementById('app-'+id);
-  if(el)el.classList.add('active');
-  updateNav(null);
-  document.getElementById('main').scrollTop=0;
+  hideAll(); const el=document.getElementById('app-'+id); if(el) el.classList.add('active');
+  updateNav(null); document.getElementById('main').scrollTop=0;
 }
 function hideAll(){
   document.getElementById('home').style.display='none';
@@ -2371,45 +2565,35 @@ function updateNav(activeWeek){
   if(activeWeek){
     const nb=document.querySelector('#nav-w'+activeWeek+' .nav-week-btn');
     const nt=document.getElementById('nt'+activeWeek);
-    if(nb)nb.classList.add('active');
-    if(nt)nt.classList.add('open');
+    if(nb) nb.classList.add('active'); if(nt) nt.classList.add('open');
   }
 }
-function updateProgress(pct){
-  document.getElementById('progress-bar').style.width=pct+'%';
-}
-function toggleTopic(id){document.getElementById(id).classList.toggle('open');}
+function updateProgress(pct){ document.getElementById('progress-bar').style.width=pct+'%'; }
+function toggleTopic(id){ document.getElementById(id).classList.toggle('open'); }
 function switchTab(btn,paneId){
   const body=btn.closest('.topic-body');
   body.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   body.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(paneId).classList.add('active');
+  btn.classList.add('active'); document.getElementById(paneId).classList.add('active');
 }
 function toggleAnswer(el){
-  const ans=el.nextElementSibling;
-  const rev=el.querySelector('.problem-reveal');
-  const open=ans.classList.toggle('show');
-  if(rev)rev.textContent=open?'Hide':'Show Answer';
+  const ans=el.nextElementSibling, rev=el.querySelector('.problem-reveal');
+  const open=ans.classList.toggle('show'); if(rev) rev.textContent=open?'Hide':'Show Answer';
 }
 function toggleWsAnswer(btn){
-  const ans=btn.nextElementSibling;
-  ans.classList.toggle('show');
+  const ans=btn.nextElementSibling; ans.classList.toggle('show');
   btn.textContent=ans.classList.contains('show')?'Hide':'Answer';
 }
 function showAllAnswers(btn){
   const ws=btn.closest('.topic-body');
   ws.querySelectorAll('.ws-answer').forEach(a=>a.classList.add('show'));
   ws.querySelectorAll('.ws-answer-toggle').forEach(b=>b.textContent='Hide');
-  btn.textContent='All Answers Shown';
-  btn.style.background='#15803d';
+  btn.textContent='All Answers Shown'; btn.style.background='#15803d';
 }
 
-// ───────── Init ─────────
-loadState();
-updateAllUI();
-updateMoneyUI();
-showHome();
+// ────────────────────── INIT ──────────────────────
+buildLoginCards();
+// Don't auto-login — show login screen on every page load
 </script>
 
 </body>
